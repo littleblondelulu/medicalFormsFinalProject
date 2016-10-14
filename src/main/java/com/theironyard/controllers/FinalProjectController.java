@@ -68,7 +68,7 @@ public class FinalProjectController {
             Question question3 = new Question();
             Question question4 = new Question();
 
-            question.setText("Pain Intensity\n");
+            question.setText("Pain intensity\n");
             question.setAnswer("0(I have no pain at the moment) \n" +
                     "5(The pain is fairly severe at the moment)\n" +
                     "10(The pain is the worst imaginable at the moment)\n");
