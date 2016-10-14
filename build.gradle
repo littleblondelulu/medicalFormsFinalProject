@@ -12,7 +12,10 @@ buildscript {
 
 apply plugin: 'java'
 apply plugin: 'eclipse'
+apply plugin: 'application'
 apply plugin: 'spring-boot'
+
+mainClassName = "com.theironyard.FinalProjectApplication"
 
 jar {
 	baseName = 'FinalProject'
