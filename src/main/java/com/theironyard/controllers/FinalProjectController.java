@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.util.ArrayList;
 import java.util.List;
 
 //need to change all -- return "/"
@@ -55,14 +56,38 @@ public class FinalProjectController {
             Patient patient = new Patient();
             patient.setFirstName("Dee");
 
+            Form form = new Form();
 
+            form.setTitle("testTitle");
+            form.setName("testName");
+            form.setDescription("testDescription: adfhadskljfhdskjfhdjksh hadflkhjfslksdhfklj ahlkdjfdskjl");
+
+            Question question = new Question();
+            Question question1 = new Question();
+
+            question.setText("What's your pain level today?");
+            question.setAnswer("not bad");
+            questions.save(question);
+
+            question1.setText("DFKHJAFH;D;S?");
+            question1.setAnswer("fhajklhjk");
+            questions.save(question1);
+
+            ArrayList<Question> current = new ArrayList<Question>();
+            current.add(question);
+            current.add(question1);
+
+            form.setQuestions(current);
 //            try {
 //                user.setPassword(PasswordStorage.createHash("hunter2"));
 //            } catch (PasswordStorage.CannotPerformOperationException e) {
 //                e.printStackTrace();
 //            }
 
+            forms.save(form);
             patients.save(patient);
+
+
 
             user.getPatients().add(patient);
             users.save(user);
@@ -147,6 +172,13 @@ public class FinalProjectController {
     public Patient patient(Integer patientId) {
         return patients.findById(patientId);
     }
+
+
+
+
+
+
+
 
 
     @RequestMapping(path = "/forms", method = RequestMethod.GET)
