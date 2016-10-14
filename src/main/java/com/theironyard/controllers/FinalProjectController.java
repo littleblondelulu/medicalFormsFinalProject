@@ -58,24 +58,52 @@ public class FinalProjectController {
 
             Form form = new Form();
 
-            form.setTitle("testTitle");
-            form.setName("testName");
-            form.setDescription("testDescription: adfhadskljfhdskjfhdjksh hadflkhjfslksdhfklj ahlkdjfdskjl");
+            form.setTitle("Oswestry Disability Questionnaire\n");
+            form.setName("testName\n");
+            form.setDescription("This questionnaire has been designed to give us information as to how your back or leg pain is affecting your ability to manage in everyday life. Please answer by checking the scale for the level which best applies to you. \n");
 
             Question question = new Question();
             Question question1 = new Question();
+            Question question2 = new Question();
+            Question question3 = new Question();
+            Question question4 = new Question();
 
-            question.setText("What's your pain level today?");
-            question.setAnswer("not bad");
+            question.setText("Pain Intensity\n");
+            question.setAnswer("0(I have no pain at the moment) \n" +
+                    "5(The pain is fairly severe at the moment)\n" +
+                    "10(The pain is the worst imaginable at the moment)\n");
             questions.save(question);
 
-            question1.setText("DFKHJAFH;D;S?");
-            question1.setAnswer("fhajklhjk");
+            question1.setText("Lifting\n");
+            question1.setAnswer("0(I can lift heavy weights without extra pain)\n" +
+                    "5(Pain prevents me lifting heavy weights but I can manage light to medium weights if they are conveniently positioned)\n" +
+                    "10(I cannot lift or carry anything)\n");
             questions.save(question1);
+
+            question2.setText("Walking\n");
+            question2.setAnswer("0(Pain does not prevent me walking any distance)\n" +
+                    "5(Pain prevents me from walking more than 500 metres)\n" +
+                    "10(I am in bed most of the time)\n");
+            questions.save(question2);
+
+            question3.setText("Sitting\n");
+            question3.setAnswer("0(I can sit in any chair as long as I like)\n" +
+                    "5(Pain prevents me from sitting more than 30 mintutes)\n" +
+                    "10(Pain prevents me from sitting at all)\n");
+            questions.save(question3);
+
+            question4.setText("Sleeping\n");
+            question4.setAnswer("0(My sleep is never disturbed by pain)\n" +
+                    "5(Pain prevents me from standing for more than 30 minutes)\n" +
+                    "10(Pain prevents me from standing at all)\n");
+            questions.save(question4);
 
             ArrayList<Question> current = new ArrayList<Question>();
             current.add(question);
             current.add(question1);
+            current.add(question2);
+            current.add(question3);
+            current.add(question4);
 
             form.setQuestions(current);
 //            try {
