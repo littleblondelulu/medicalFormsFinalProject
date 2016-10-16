@@ -253,17 +253,17 @@ public class FinalProjectController {
 
 //QUESTION ABOUT ADDING PATIENTS BY DOCTOR RATHER THAN ALL PATIENTS FOR ALL DOCS
 
-            user.getPatients().add(patient);
-            user.getPatients().add(patient1);
-            user.getPatients().add(patient2);
-            user.getPatients().add(patient3);
-            user.getPatients().add(patient4);
-            user.getPatients().add(patient5);
-            user.getPatients().add(patient6);
-            user.getPatients().add(patient7);
-            user.getPatients().add(patient8);
-            user.getPatients().add(patient9);
-            user.getPatients().add(patient10);
+            user1.getPatients().add(patient);
+//            user1.getPatients().add(patient1);
+//            user1.getPatients().add(patient2);
+//            user1.getPatients().add(patient3);
+//            user2.getPatients().add(patient4);
+//            user2.getPatients().add(patient5);
+//            user2.getPatients().add(patient6);
+//            user2.getPatients().add(patient7);
+//            user.getPatients().add(patient8);
+//            user.getPatients().add(patient9);
+//            user.getPatients().add(patient10);
 
 
         }
@@ -350,6 +350,11 @@ public class FinalProjectController {
 
 
 
+    @RequestMapping(path = "/patients", method = RequestMethod.GET)
+    public List<Patient> patients() {
+
+        return (List) patients.findAll();
+    }
 
 
 
