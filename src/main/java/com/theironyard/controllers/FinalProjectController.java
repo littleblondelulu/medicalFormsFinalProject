@@ -347,14 +347,7 @@ public class FinalProjectController {
         return patients.findById(patientId);
     }
 
-
-
-
-    @RequestMapping(path = "/patients", method = RequestMethod.GET)
-    public List<Patient> patients() {
-
-        return (List) patients.findAll();
-    }
+    
 
 
 
