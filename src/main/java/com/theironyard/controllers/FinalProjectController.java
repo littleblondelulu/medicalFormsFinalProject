@@ -58,9 +58,15 @@ public class FinalProjectController {
             patient.setLastName("Gladice");
             patients.save(patient);
 
+            Patient patient1 = new Patient();
+            patient1.setFirstName("Sam");
+            patient1.setLastName("Rodriguez");
+            patients.save(patient1);
+
 
             ArrayList<Patient> patientsGroup1 = new ArrayList<Patient>();
             patientsGroup1.add(patient);
+            patientsGroup1.add(patient1);
             user.setPatients(patientsGroup1);
 
 
@@ -197,6 +203,11 @@ public class FinalProjectController {
 
 
 
+    @RequestMapping(path = "/users", method = RequestMethod.GET)
+    public List<User> users() {
+
+        return (List) users.findAll();
+    }
 
 
 
