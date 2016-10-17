@@ -119,10 +119,11 @@ public class FinalProjectController {
 
             form1.setQuestions(questionGroup1);
 
-            patients.save(patient);
 
 
             users.save(user);
+
+            patients.save(patient);
 
             forms.save(form1);
 
