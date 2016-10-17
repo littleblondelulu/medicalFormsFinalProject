@@ -154,9 +154,15 @@ public class FinalProjectController {
 
 
             Form form1 = new Form();
+        //    Form form2 = new Form();
+
             form1.setTitle("Oswestry Disability Questionnaire\n");
             form1.setName("Oswestry Disability Questionnaire\n");
             form1.setDescription("This questionnaire has been designed to give us information as to how your back or leg pain is affecting your ability to manage in everyday life. Please answer by checking the scale for the level which best applies to you. \n");
+
+//            form2.setTitle("TEST");
+//            form2.setName("Test");
+//            form2.setDescription("Test");
 
             Question question = new Question();
             Question question1 = new Question();
@@ -203,9 +209,9 @@ public class FinalProjectController {
             questionGroup1.add(question4);
 
             form1.setQuestions(questionGroup1);
+
             forms.save(form1);
-
-
+           // forms.save(form2);
 
           //  user.getPatients().add(patient);
 
@@ -239,7 +245,11 @@ public class FinalProjectController {
 
 
 
+    @RequestMapping(path = "/users", method = RequestMethod.GET)
+    public List<User> users() {
 
+        return (List) users.findAll();
+    }
 
 
     //ROUTE TO USER IN DATABASE AND SEND TO FRONT END
@@ -280,11 +290,6 @@ public class FinalProjectController {
 
 
 
-    @RequestMapping(path = "/users", method = RequestMethod.GET)
-    public List<User> users() {
-
-        return (List) users.findAll();
-    }
 
 
 

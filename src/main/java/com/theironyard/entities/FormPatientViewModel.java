@@ -27,4 +27,7 @@ public class FormPatientViewModel {
         this.form = form;
         this.patient = patient;
     }
+
+    public FormPatientViewModel(){}
+
 }
