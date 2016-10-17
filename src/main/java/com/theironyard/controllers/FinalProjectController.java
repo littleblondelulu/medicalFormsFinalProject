@@ -155,6 +155,7 @@ public class FinalProjectController {
 
             Form form1 = new Form();
             Form form2 = new Form();
+           // Form form3 = new Form();
 
             form1.setTitle("Oswestry Disability Questionnaire\n");
             form1.setName("Oswestry Disability Questionnaire\n");
@@ -163,6 +164,11 @@ public class FinalProjectController {
             form2.setTitle("Neck Pain Disability Index");
             form2.setName("Neck Pain Disability Index");
             form2.setDescription("This questionnaire has been designed to give the doctor information as to how your neck pain has affected your ability to manage in everyday life. Please mark the ONE NUMBER in each question, which most closely describes your problem. We realize you may consider that two of the statements in any one section relate to you, but only mark the box which most closely describes your problem.");
+
+//            form3.setTitle("The Patient-Specific Functional Scale");
+//            form3.setName("The Patient-Specific Functional Scale");
+//            form3.setDescription("I am going to ask you to identify up to three important activities that you are unable to do or are having difficulty\n" +
+//                    "with as a result of your _________________ problem. ");
 
             Question question = new Question();
             Question question1 = new Question();
@@ -175,6 +181,11 @@ public class FinalProjectController {
             Question question8 = new Question();
             Question question9 = new Question();
             Question question10 = new Question();
+//            Question question11 = new Question();
+//            Question question12 = new Question();
+//            Question question13 = new Question();
+//            Question question14 = new Question();
+//            Question question15 = new Question();
 
 
             question.setTitle("Pain intensity\n");
@@ -264,6 +275,11 @@ public class FinalProjectController {
             question10.setAnswer("");
             question10.setType("scale1-10");
             questions.save(question10);
+
+//            question11.setTitle("Initial Assessment");
+//            question11.setText("Today, are there any activities that you are unable to do or having difficulty with because of your _________________ problem?");
+//            question11.setType("fil");
+//            questions.save(question11);
 
 
             ArrayList<Question> questionGroup1 = new ArrayList<Question>();
