@@ -334,7 +334,7 @@ public class FinalProjectController {
     //get one form
     //Returns a specific form and associates it with a patient
     @RequestMapping(path = "/forms/{formId}/{patientId}", method = RequestMethod.GET)
-    public FormPatientViewModel form(@PathVariable Integer formId, Integer patientId) {
+    public FormPatientViewModel form(@PathVariable Integer formId, @PathVariable Integer patientId) {
         Form form = forms.findById(formId);
         Patient patient = patients.findById(patientId);
         //set formPatientView to form and patient
