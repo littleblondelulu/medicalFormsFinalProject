@@ -342,8 +342,9 @@ public class FinalProjectController {
 
 
 
-    @RequestMapping(path = "users/{userId}/patients/{patientId}", method = RequestMethod.GET)
-    public Patient patient(Integer patientId) {
+    @RequestMapping(path = "patients/{patientId}", method = RequestMethod.GET)
+    public Patient patient(Integer userId, Integer patientId) {
+
         return patients.findById(patientId);
     }
 
@@ -374,7 +375,7 @@ public class FinalProjectController {
     //getting a new form here
     //get one form
     //Returns a specific form and associates it with a patient
-    @RequestMapping(path = "/forms/{formId}/{patientId}", method = RequestMethod.GET)
+    @RequestMapping(path = "/forms/{formId}", method = RequestMethod.GET)
     public FormPatientViewModel form(Integer formId, Integer patientId) {
         Form form = forms.findById(formId);
         Patient patient = patients.findById(patientId);
