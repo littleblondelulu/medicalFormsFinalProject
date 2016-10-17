@@ -54,7 +54,8 @@ public class FinalProjectController {
             user.setName("Dr. Barringer");
 
             Patient patient = new Patient();
-            patient.setFirstName("Dee");
+            patient.setFirstName("Jeb");
+            patient.setLastName("Gladice");
             patients.save(patient);
 
 
