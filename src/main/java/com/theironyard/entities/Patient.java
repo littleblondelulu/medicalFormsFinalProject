@@ -27,8 +27,6 @@ public class Patient {
 
     public Patient(){};
 
-
-
     public int getId() {
         return this.id;
     }
