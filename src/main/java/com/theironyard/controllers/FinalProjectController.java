@@ -340,10 +340,15 @@ public class FinalProjectController {
 
 
 
+    @RequestMapping(path = "/patients", method = RequestMethod.GET)
+    public List<Patient> patients() {
+
+        return (List) patients.findAll();
+    }
 
 
     @RequestMapping(path = "patients/{patientId}", method = RequestMethod.GET)
-    public Patient patient(Integer userId, Integer patientId) {
+    public Patient patient(Integer patientId) {
 
         return patients.findById(patientId);
     }
