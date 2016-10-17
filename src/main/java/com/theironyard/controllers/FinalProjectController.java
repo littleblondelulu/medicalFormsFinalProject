@@ -87,8 +87,8 @@ public class FinalProjectController {
             patients.save(patient5);
 
             Patient patient6 = new Patient();
-            patient6.setFirstName("Tom");
-            patient6.setLastName("Seleck");
+            patient6.setFirstName("Ron");
+            patient6.setLastName("Burgundy");
             patients.save(patient6);
 
             Patient patient7 = new Patient();
