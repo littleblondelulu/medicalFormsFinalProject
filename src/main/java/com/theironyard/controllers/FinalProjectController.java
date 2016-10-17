@@ -51,32 +51,21 @@ public class FinalProjectController {
 
         if (users.count() == 0) {
             User user = new User();
-
-            Patient patient = new Patient();
-
             user.setName("Dr. Barringer");
 
+            Patient patient = new Patient();
             patient.setFirstName("Dee");
 
             Form form1 = new Form();
-
-
             form1.setTitle("Oswestry Disability Questionnaire\n");
-
-
-
             form1.setName("testName\n");
-
             form1.setDescription("This questionnaire has been designed to give us information as to how your back or leg pain is affecting your ability to manage in everyday life. Please answer by checking the scale for the level which best applies to you. \n");
-
 
             Question question = new Question();
             Question question1 = new Question();
             Question question2 = new Question();
             Question question3 = new Question();
             Question question4 = new Question();
-
-
 
             question.setText("Pain intensity\n");
             question.setAnswer("0(I have no pain at the moment) \n" +
@@ -121,12 +110,11 @@ public class FinalProjectController {
 
 
 
-            users.save(user);
-
             patients.save(patient);
 
             forms.save(form1);
 
+            users.save(user);
 
             user.getPatients().add(patient);
 
