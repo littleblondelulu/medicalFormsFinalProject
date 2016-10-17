@@ -51,57 +51,17 @@ public class FinalProjectController {
 
         if (users.count() == 0) {
             User user = new User();
-            User user1 = new User();
-            User user2 = new User();
 
             Patient patient = new Patient();
-            Patient patient1 = new Patient();
-            Patient patient2 = new Patient();
-            Patient patient3 = new Patient();
-            Patient patient4 = new Patient();
-            Patient patient5 = new Patient();
-            Patient patient6 = new Patient();
-            Patient patient7 = new Patient();
-            Patient patient8 = new Patient();
-            Patient patient9 = new Patient();
-            Patient patient10 = new Patient();
-
 
             user.setName("Dr. Barringer");
-            user1.setName("Dr. Toboggan");
-            user2.setName("Dr. Sanchez");
 
-
-
-            patient.setFirstName("Jeb");
-            patient.setLastName("Gladice");
-            patient1.setFirstName("Allejandro");
-            patient1.setLastName("Rodriguez");
-            patient2.setFirstName("Sandra");
-            patient2.setLastName("Dee");
-            patient3.setFirstName("Sammy");
-            patient3.setLastName("Smith");
-            patient4.setFirstName("Thomas");
-            patient4.setLastName("Edison");
-            patient5.setFirstName("Bill");
-            patient5.setLastName("Gates");
-            patient6.setFirstName("Barack");
-            patient6.setLastName("Obama");
-            patient7.setFirstName("Lloyd");
-            patient7.setLastName("Christmas");
-            patient8.setFirstName("Chip");
-            patient8.setLastName("Jolly");
-            patient9.setFirstName("Suzie");
-            patient9.setLastName("Que");
-            patient10.setFirstName("David");
-            patient10.setLastName("Lee");
+            patient.setFirstName("Dee");
 
             Form form1 = new Form();
-            Form form2 = new Form();
 
 
             form1.setTitle("Oswestry Disability Questionnaire\n");
-            form2.setTitle("Neck Pain Disability Index\n");
 
 
 
@@ -150,7 +110,6 @@ public class FinalProjectController {
 
 
 
-
             ArrayList<Question> questionGroup1 = new ArrayList<Question>();
             questionGroup1.add(question);
             questionGroup1.add(question1);
@@ -158,99 +117,17 @@ public class FinalProjectController {
             questionGroup1.add(question3);
             questionGroup1.add(question4);
 
-
-
-//NEW QUESTION LIST
-            Question question5 = new Question();
-            Question question6 = new Question();
-            Question question7 = new Question();
-            Question question8 = new Question();
-            Question question9 = new Question();
-            Question question10 = new Question();
-
-            question5.setText("Personal Care (Washing, Dressing, etc.)");
-            question5.setAnswer("0(I can look after myself normally without causing extra pain)\n" +
-                    "5(I need some help but manage most of my personal care)\n" +
-                    "10(i do not get dressed, I wash with difficulty and stay in bed)\n");
-            questions.save(question5);
-
-            question6.setText("Reading");
-            question6.setAnswer("0(I can read as much as I want to with no pain in my neck)\n" +
-                    "5(I can’t read as much as I want because of moderate pain in my neck)\n" +
-                    "10(I cannot read at all) \n");
-            questions.save(question6);
-
-            question7.setText("Headaches\n");
-            question7.setAnswer("0(I have no headaches at all)\n" +
-                    "5(I have moderate headaches, which come frequently)\n" +
-                    "10(I have headaches almost all of the time)\n");
-            questions.save(question7);
-
-            question8.setText("Work\n");
-            question8.setAnswer("0(I can do as much work as I want to)\n" +
-                    "5(I cannot do my usual work)\n" +
-                    "10(I can’t do any work at all)\n");
-            questions.save(question8);
-
-            question9.setText("Concentration\n");
-            question9.setAnswer("0(I can concentrate fully when I wast to with no difficulty)\n" +
-                    "5(I have a fair degree of difficulty in concentrating when I want to)\n" +
-                    "10(I cannot concentrate at all)\n");
-            questions.save(question9);
-
-            question10.setText("Driving\n");
-            question10.setAnswer("0(I can drive my car without any neck pain)\n" +
-                    "5(I can’t drive my car as long as I want because of slight pain in my neck)\n" +
-                    "10(I can’t drive my car at all because of the pain)\n");
-            questions.save(question10);
-            
-
-            ArrayList<Question> questionGroup2 = new ArrayList<Question>();
-            questionGroup2.add(question5);
-            questionGroup2.add(question6);
-            questionGroup2.add(question7);
-            questionGroup2.add(question8);
-            questionGroup2.add(question9);
-            questionGroup2.add(question10);
-
             form1.setQuestions(questionGroup1);
-            form2.setQuestions(questionGroup2);
-
 
             patients.save(patient);
-            patients.save(patient1);
-            patients.save(patient2);
-            patients.save(patient3);
-            patients.save(patient4);
-            patients.save(patient5);
-            patients.save(patient6);
-            patients.save(patient7);
-            patients.save(patient8);
-            patients.save(patient9);
-            patients.save(patient10);
 
 
             users.save(user);
-            users.save(user1);
-            users.save(user2);
 
             forms.save(form1);
-            forms.save(form2);
 
-//QUESTION ABOUT ADDING PATIENTS BY DOCTOR RATHER THAN ALL PATIENTS FOR ALL DOCS
 
-            user1.getPatients().add(patient);
-            user1.getPatients().add(patient1);
-            user1.getPatients().add(patient2);
-            user1.getPatients().add(patient3);
-            user2.getPatients().add(patient4);
-            user2.getPatients().add(patient5);
-            user2.getPatients().add(patient6);
-            user2.getPatients().add(patient7);
-            user.getPatients().add(patient8);
-            user.getPatients().add(patient9);
-            user.getPatients().add(patient10);
-
+            user.getPatients().add(patient);
 
         }
     }
