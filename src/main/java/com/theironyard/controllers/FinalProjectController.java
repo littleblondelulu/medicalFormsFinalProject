@@ -155,6 +155,7 @@ public class FinalProjectController {
 
             users.save(user);
             users.save(user1);
+            users.save(user2);
 
 
             Form form1 = new Form();
