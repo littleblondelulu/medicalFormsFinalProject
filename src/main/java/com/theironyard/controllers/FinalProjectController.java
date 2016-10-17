@@ -167,7 +167,7 @@ public class FinalProjectController {
 
     //ROUTE TO USER IN DATABASE AND SEND TO FRONT END
     //ASSIGN SESSION
-    @RequestMapping(path = "/user/{id}", method = RequestMethod.GET)
+    @RequestMapping(path = "/users/{id}", method = RequestMethod.GET)
     public User getUser(@PathVariable Integer id) {
         User u = users.findOne(id);
 
@@ -184,7 +184,7 @@ public class FinalProjectController {
 
     // GET     /patients --- TELL Aaron to change endpt to this
     //get /patients
-    @RequestMapping(path = "/user/{userId}/patients", method = RequestMethod.GET)
+    @RequestMapping(path = "/users/{userId}/patients", method = RequestMethod.GET)
     public List<Patient> allPatient(@PathVariable int userId) {
         User u = users.findOne(userId);
 
