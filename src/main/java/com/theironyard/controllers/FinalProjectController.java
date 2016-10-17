@@ -248,17 +248,17 @@ public class FinalProjectController {
             questions.save(question10);
 
 
-//            ArrayList<Question> questionGroup2 = new ArrayList<Question>();
-//
-//            questionGroup2.add(question5);
-//            questionGroup2.add(question6);
-//            questionGroup2.add(question7);
-//            questionGroup2.add(question8);
-//            questionGroup2.add(question9);
-//            questionGroup2.add(question10);
+            ArrayList<Question> questionGroup2 = new ArrayList<Question>();
+
+            questionGroup2.add(question5);
+            questionGroup2.add(question6);
+            questionGroup2.add(question7);
+            questionGroup2.add(question8);
+            questionGroup2.add(question9);
+            questionGroup2.add(question10);
 
 
-            form2.getQuestions().add(question5);
+           // form2.getQuestions().add(question5);
 
 
             forms.save(form2);
