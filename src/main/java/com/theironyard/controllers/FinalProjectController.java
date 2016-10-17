@@ -298,7 +298,7 @@ public class FinalProjectController {
 
 
 
-    @RequestMapping(path = "/patients/{patientId}", method = RequestMethod.GET)
+    @RequestMapping(path = "users/{userId}/patients/{patientId}", method = RequestMethod.GET)
     public Patient patient(Integer patientId) {
         return patients.findById(patientId);
     }
