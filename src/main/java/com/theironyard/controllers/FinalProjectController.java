@@ -53,6 +53,9 @@ public class FinalProjectController {
             User user = new User();
             user.setName("Dr. Barringer");
 
+            User user1 = new User();
+            user1.setName("Dr. Tobaggon");
+
             Patient patient = new Patient();
             patient.setFirstName("Jeb");
             patient.setLastName("Gladice");
@@ -94,6 +97,7 @@ public class FinalProjectController {
 
 
             users.save(user);
+            users.save(user1);
 
 
             Form form1 = new Form();
