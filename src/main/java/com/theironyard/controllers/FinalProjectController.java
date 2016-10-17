@@ -87,9 +87,19 @@ public class FinalProjectController {
             patients.save(patient5);
 
             Patient patient6 = new Patient();
-            patient6.setFirstName("Jimmy");
-            patient6.setLastName("Smith");
+            patient6.setFirstName("Tom");
+            patient6.setLastName("Seleck");
             patients.save(patient6);
+
+            Patient patient7 = new Patient();
+            patient7.setFirstName("Tom");
+            patient7.setLastName("Seleck");
+            patients.save(patient7);
+
+            Patient patient8 = new Patient();
+            patient8.setFirstName("Steve");
+            patient8.setLastName("Jobs");
+            patients.save(patient8);
 
             ArrayList<Patient> patientsGroup1 = new ArrayList<Patient>();
             ArrayList<Patient> patientsGroup2 = new ArrayList<Patient>();
@@ -101,6 +111,8 @@ public class FinalProjectController {
             patientsGroup1.add(patient4);
             patientsGroup1.add(patient5);
             patientsGroup2.add(patient6);
+            patientsGroup2.add(patient7);
+            patientsGroup2.add(patient8);
             user.setPatients(patientsGroup1);
             user1.setPatients(patientsGroup2);
 
