@@ -163,12 +163,6 @@ public class FinalProjectController {
 //            Question question2 = new Question();
 //            Question question3 = new Question();
 //            Question question4 = new Question();
-            Question question5 = new Question();
-            Question question6 = new Question();
-            Question question7 = new Question();
-            Question question8 = new Question();
-            Question question9 = new Question();
-            Question question10 = new Question();
 
 
 //            question.setText("Pain intensity\n");
@@ -216,17 +210,28 @@ public class FinalProjectController {
             form2.setName("Neck Pain Disability Index\n");
             form2.setDescription("This questionnaire has been designed to give the doctor information as to how your neck pain has affected your ability to manage in everyday life. Please mark the ONE NUMBER in each question, which most closely describes your problem. We realize you may consider that two of the statements in any one section relate to you, but only mark the box which most closely describes your problem. \n");
 
+            Question question5 = new Question();
+            Question question6 = new Question();
+            Question question7 = new Question();
+            Question question8 = new Question();
+            Question question9 = new Question();
+            Question question10 = new Question();
+
 
             question5.setText("Personal Care (Washing, Dressing, etc.)");
-            question5.setAnswer("0(I can look after myself normally without causing extra pain)\n" + "5(I need some help but manage most of my personal care)\n" + "10(i do not get dressed, I wash with difficulty and stay in bed)\n");
+            question5.setAnswer("0(I can look after myself normally without causing extra pain)\n" +
+                    "5(I need some help but manage most of my personal care)\n" +
+                    "10(i do not get dressed, I wash with difficulty and stay in bed)\n");
             questions.save(question5);
 
             question6.setText("Reading");
-            question6.setAnswer("0(I can read as much as I want to with no pain in my neck)\n" + "5(I can’t read as much as I want because of moderate pain in my neck)\n" + "10(I cannot read at all) \n");
+            question6.setAnswer("0(I can read as much as I want to with no pain in my neck)\n" +
+                    "5(I can’t read as much as I want because of moderate pain in my neck)\n" + "10(I cannot read at all) \n");
             questions.save(question6);
 
             question7.setText("Headaches");
-            question7.setAnswer("0(I have no headaches at all)\n" + "5(I have moderate headaches, which come frequently)\n" + "10(I have headaches almost all of the time)\n");
+            question7.setAnswer("0(I have no headaches at all)\n" + "5(I have moderate headaches, which come frequently)\n" +
+                    "10(I have headaches almost all of the time)\n");
             questions.save(question7);
 
             question8.setText("Work");
@@ -234,7 +239,8 @@ public class FinalProjectController {
             questions.save(question8);
 
             question9.setText("Concentration");
-            question9.setAnswer("0(I can concentrate fully when I wast to with no difficulty)\n" + "5(I have a fair degree of difficulty in concentrating when I want to)\n" + "10(I cannot concentrate at all)\n");
+            question9.setAnswer("0(I can concentrate fully when I wast to with no difficulty)\n" +
+                    "5(I have a fair degree of difficulty in concentrating when I want to)\n" + "10(I cannot concentrate at all)\n");
             questions.save(question9);
 
             question10.setText("Driving");
@@ -242,17 +248,17 @@ public class FinalProjectController {
             questions.save(question10);
 
 
-            ArrayList<Question> questionGroup2 = new ArrayList<Question>();
+//            ArrayList<Question> questionGroup2 = new ArrayList<Question>();
+//
+//            questionGroup2.add(question5);
+//            questionGroup2.add(question6);
+//            questionGroup2.add(question7);
+//            questionGroup2.add(question8);
+//            questionGroup2.add(question9);
+//            questionGroup2.add(question10);
 
-            questionGroup2.add(question5);
-            questionGroup2.add(question6);
-            questionGroup2.add(question7);
-            questionGroup2.add(question8);
-            questionGroup2.add(question9);
-            questionGroup2.add(question10);
 
-
-            form2.setQuestions(questionGroup2);
+            form2.getQuestions().add(question5);
 
 
             forms.save(form2);
@@ -412,9 +418,20 @@ public class FinalProjectController {
 
 
 
+    @RequestMapping(path = "/questions", method = RequestMethod.GET)
+    public List<Question> questions() {
+
+        return (List) questions.findAll();
+    }
 
 
 
+
+    @RequestMapping(path = "questions/{questionId}", method = RequestMethod.GET)
+    public Question question(@PathVariable Integer questionId) {
+
+        return questions.findById(questionId);
+    }
 
 
     //post /addResponses

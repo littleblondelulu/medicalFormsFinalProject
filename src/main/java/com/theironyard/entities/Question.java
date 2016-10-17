@@ -11,9 +11,6 @@ public class Question {
     int id;
 
     @Column
-    int formID;
-
-    @Column
     String title;
 
     @Column
@@ -27,9 +24,8 @@ public class Question {
 
     public Question(){};
 
-    public Question(int id, int formID, String title, String type, String text, String answer) {
+    public Question(int id, String title, String type, String text, String answer) {
         this.id = id;
-        this.formID = formID;
         this.title = title;
         this.type = type;
         this.text = text;
@@ -42,14 +38,6 @@ public class Question {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public int getFormID() {
-        return this.formID;
-    }
-
-    public void setFormID(int formID) {
-        this.formID = formID;
     }
 
     public String getTitle() {
