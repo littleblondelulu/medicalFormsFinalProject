@@ -55,6 +55,16 @@ public class FinalProjectController {
 
             Patient patient = new Patient();
             patient.setFirstName("Dee");
+            patients.save(patient);
+
+
+            ArrayList<Patient> patientsGroup1 = new ArrayList<Patient>();
+            patientsGroup1.add(patient);
+            user.setPatients(patientsGroup1);
+
+
+            users.save(user);
+
 
             Form form1 = new Form();
             form1.setTitle("Oswestry Disability Questionnaire\n");
@@ -109,14 +119,11 @@ public class FinalProjectController {
             form1.setQuestions(questionGroup1);
 
 
-
-            patients.save(patient);
-
             forms.save(form1);
 
-            users.save(user);
 
-            user.getPatients().add(patient);
+
+          //  user.getPatients().add(patient);
 
         }
     }
