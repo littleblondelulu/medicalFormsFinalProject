@@ -56,6 +56,9 @@ public class FinalProjectController {
             User user1 = new User();
             user1.setName("Dr. Tobaggon");
 
+            User user2 = new User();
+            user2.setName("Dr. Sanchez");
+
             Patient patient = new Patient();
             patient.setFirstName("Jeb");
             patient.setLastName("Gladice");
@@ -101,8 +104,35 @@ public class FinalProjectController {
             patient8.setLastName("Jobs");
             patients.save(patient8);
 
+            Patient patient9 = new Patient();
+            patient9.setFirstName("Belinda");
+            patient9.setLastName("Carlisle");
+            patients.save(patient9);
+
+            Patient patient10 = new Patient();
+            patient10.setFirstName("Jones");
+            patient10.setLastName("McGee");
+            patients.save(patient10);
+
+            Patient patient11 = new Patient();
+            patient11.setFirstName("Ann");
+            patient11.setLastName("Sailor");
+            patients.save(patient11);
+
+            Patient patient12 = new Patient();
+            patient12.setFirstName("Libby");
+            patient12.setLastName("Van Vurren");
+            patients.save(patient12);
+
+            Patient patient13 = new Patient();
+            patient13.setFirstName("Mike");
+            patient13.setLastName("Peddigrew");
+            patients.save(patient13);
+
+
             ArrayList<Patient> patientsGroup1 = new ArrayList<Patient>();
             ArrayList<Patient> patientsGroup2 = new ArrayList<Patient>();
+            ArrayList<Patient> patientsGroup3 = new ArrayList<Patient>();
 
             patientsGroup1.add(patient);
             patientsGroup1.add(patient1);
@@ -113,8 +143,14 @@ public class FinalProjectController {
             patientsGroup2.add(patient6);
             patientsGroup2.add(patient7);
             patientsGroup2.add(patient8);
+            patientsGroup3.add(patient9);
+            patientsGroup3.add(patient10);
+            patientsGroup3.add(patient11);
+            patientsGroup3.add(patient12);
+            patientsGroup3.add(patient13);
             user.setPatients(patientsGroup1);
             user1.setPatients(patientsGroup2);
+            user2.setPatients(patientsGroup3);
 
 
             users.save(user);
