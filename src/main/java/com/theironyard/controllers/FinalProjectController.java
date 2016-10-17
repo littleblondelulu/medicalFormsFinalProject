@@ -177,70 +177,92 @@ public class FinalProjectController {
             Question question10 = new Question();
 
 
-            question.setText("Pain intensity\n");
-            question.setAnswer("0(I have no pain at the moment) \n" +
+            question.setTitle("Pain intensity\n");
+            question.setText("0(I have no pain at the moment) \n" +
                     "5(The pain is fairly severe at the moment)\n" +
                     "10(The pain is the worst imaginable at the moment)\n");
+            question.setAnswer("");
+            question.setType("scale1-10");
             questions.save(question);
 
-            question1.setText("Lifting\n");
-            question1.setAnswer("0(I can lift heavy weights without extra pain)\n" +
+            question1.setTitle("Lifting\n");
+            question1.setText("0(I can lift heavy weights without extra pain)\n" +
                     "5(Pain prevents me lifting heavy weights but I can manage light to medium weights if they are conveniently positioned)\n" +
                     "10(I cannot lift or carry anything)\n");
+            question1.setAnswer("");
+            question1.setType("scale1-10");
             questions.save(question1);
 
-            question2.setText("Walking\n");
-            question2.setAnswer("0(Pain does not prevent me walking any distance)\n" +
+            question2.setTitle("Walking\n");
+            question2.setText("0(Pain does not prevent me walking any distance)\n" +
                     "5(Pain prevents me from walking more than 500 metres)\n" +
                     "10(I am in bed most of the time)\n");
+            question2.setAnswer("");
+            question2.setType("scale1-10");
             questions.save(question2);
 
-            question3.setText("Sitting\n");
-            question3.setAnswer("0(I can sit in any chair as long as I like)\n" +
+            question3.setTitle("Sitting\n");
+            question3.setText("0(I can sit in any chair as long as I like)\n" +
                     "5(Pain prevents me from sitting more than 30 mintutes)\n" +
                     "10(Pain prevents me from sitting at all)\n");
+            question3.setAnswer("");
+            question3.setType("scale1-10");
             questions.save(question3);
 
-            question4.setText("Sleeping\n");
-            question4.setAnswer("0(My sleep is never disturbed by pain)\n" +
+            question4.setTitle("Sleeping\n");
+            question4.setText("0(My sleep is never disturbed by pain)\n" +
                     "5(Pain prevents me from standing for more than 30 minutes)\n" +
                     "10(Pain prevents me from standing at all)\n");
+            question4.setAnswer("");
+            question4.setType("scale1-10");
             questions.save(question4);
 
-            question5.setText("Personal Care (Washing, Dressing, etc.)");
-            question5.setAnswer("0(I can look after myself normally without causing extra pain)\n" +
+            question5.setTitle("Personal Care (Washing, Dressing, etc.)");
+            question5.setText("0(I can look after myself normally without causing extra pain)\n" +
                     "5(I need some help but manage most of my personal care)\n" +
                     "10(i do not get dressed, I wash with difficulty and stay in bed)\n");
+            question5.setAnswer("");
+            question5.setType("scale1-10");
             questions.save(question5);
 
-            question6.setText("Reading");
-            question6.setAnswer("0(I can read as much as I want to with no pain in my neck)\n" +
+            question6.setTitle("Reading");
+            question6.setText("0(I can read as much as I want to with no pain in my neck)\n" +
                     "5(I can’t read as much as I want because of moderate pain in my neck)\n" +
                     "10(I cannot read at all) \n");
+            question6.setAnswer("");
+            question6.setType("scale1-10");
             questions.save(question6);
 
-            question7.setText("Headaches");
-            question7.setAnswer("0(I have no headaches at all)\n" +
+            question7.setTitle("Headaches");
+            question7.setText("0(I have no headaches at all)\n" +
                             "5(I have moderate headaches, which come frequently)\n" +
                     "10(I have headaches almost all of the time)\n");
+            question7.setAnswer("");
+            question7.setType("scale1-10");
             questions.save(question7);
 
-            question8.setText("Work");
-            question8.setAnswer("0(I can do as much work as I want to)\n" +
+            question8.setTitle("Work");
+            question8.setText("0(I can do as much work as I want to)\n" +
                     "5(I cannot do my usual work)\n " +
                     "10(I can’t do any work at all)\n");
+            question8.setAnswer("");
+            question8.setType("scale1-10");
             questions.save(question8);
 
-            question9.setText("Concentration");
-            question9.setAnswer("0(I can concentrate fully when I wast to with no difficulty)\n" +
+            question9.setTitle("Concentration");
+            question9.setText("0(I can concentrate fully when I wast to with no difficulty)\n" +
                     "5(I have a fair degree of difficulty in concentrating when I want to)\n" +
                     "10(I cannot concentrate at all)\n");
+            question9.setAnswer("");
+            question9.setType("scale1-10");
             questions.save(question9);
 
-            question10.setText("Driving");
-            question10.setAnswer("0(I can drive my car without any neck pain)\n" +
+            question10.setTitle("Driving");
+            question10.setText("0(I can drive my car without any neck pain)\n" +
                     "5(I can’t drive my car as long as I want because of slight pain in my neck)\n" +
                     "10(I can’t drive my car at all because of the pain)\n");
+            question10.setAnswer("");
+            question10.setType("scale1-10");
             questions.save(question10);
 
 
