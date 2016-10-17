@@ -86,14 +86,23 @@ public class FinalProjectController {
             patient5.setLastName("Smith");
             patients.save(patient5);
 
+            Patient patient6 = new Patient();
+            patient6.setFirstName("Jimmy");
+            patient6.setLastName("Smith");
+            patients.save(patient6);
+
             ArrayList<Patient> patientsGroup1 = new ArrayList<Patient>();
+            ArrayList<Patient> patientsGroup2 = new ArrayList<Patient>();
+
             patientsGroup1.add(patient);
             patientsGroup1.add(patient1);
             patientsGroup1.add(patient2);
             patientsGroup1.add(patient3);
             patientsGroup1.add(patient4);
             patientsGroup1.add(patient5);
+            patientsGroup2.add(patient6);
             user.setPatients(patientsGroup1);
+            user1.setPatients(patientsGroup2);
 
 
             users.save(user);
