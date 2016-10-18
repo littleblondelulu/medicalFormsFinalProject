@@ -18,7 +18,7 @@ public class Form {
     @Column(nullable = false)
     String name;
 
-    @Column(nullable = false)
+    @Column(nullable = false, length = 1000)
     String description;
 
     @OneToMany

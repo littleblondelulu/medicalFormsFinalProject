@@ -43,7 +43,14 @@ public class FinalProjectController {
     @PostConstruct
     public void init() {
 
-        if (users.count() == 0) {
+            forms.deleteAll();
+            users.deleteAll();
+            questions.deleteAll();
+            patients.deleteAll();
+
+
+
+//        if (users.count() == 0) {
             User user = new User();
             user.setName("Dr. Barringer");
 
@@ -187,6 +194,12 @@ public class FinalProjectController {
             form1.setDescription("This questionnaire has been designed to give us information as to how your back or leg pain is affecting your ability to manage in everyday life. Please answer by checking the scale for the level which best applies to you.");
 
 
+            Form form2 = new Form();
+
+            form2.setTitle("Neck Pain Disability Index");
+            form2.setName("Neck Pain Disability Index");
+            form2.setDescription("This questionnaire has been designed to give the doctor information as to how your neck pain has affected your ability to manage in everyday life. Please mark the ONE NUMBER in each question, which most closely describes your problem. We realize you may consider that two of the statements in any one section relate to you, but only mark the box which most closely describes your problem");
+
 
 
 
@@ -196,11 +209,16 @@ public class FinalProjectController {
             Question question3 = new Question();
             Question question4 = new Question();
 
+        Question question5 = new Question();
+       // Question question6 = new Question();
+//        Question question7 = new Question();
+//        Question question8 = new Question();
+//        Question question9 = new Question();
+//        Question question10 = new Question();
 
 
 
-
-            question.setTitle("Pain intensity\n");
+        question.setTitle("Pain intensity\n");
             question.setText("0(I have no pain at the moment) \n" +
                     "5(The pain is fairly severe at the moment)\n" +
                     "10(The pain is the worst imaginable at the moment)\n");
@@ -248,8 +266,56 @@ public class FinalProjectController {
             question4.setType("scale1-10");
             questions.save(question4);
 
+        question5.setTitle("Personal Care (Washing, Dressing, etc");
+        question5.setText("0(I can look after myself normally without causing extra pain)\n" + "5(I need some help but manage most of my personal care)\n" + "10(i do not get dressed, I wash with difficulty and stay in bed)\n)");
+        question5.setAnswer("");
+        question5.setType("scale1-10");
+        questions.save(question5);
 
 
+//            question6.setTitle("Reading");
+//            question6.setText("0(I can read as much as I want to with no pain in my neck)\n" +
+//                    "5(I cna't read as much as I want with moderate pain in my neck)\n" +
+//                    "10(I cannot read at all)";
+//            question6.setAnswer("");
+//            question6.setType("scale1-10");
+//            questions.save(question6);
+
+//
+//            question7.setTitle("Headaches");
+//            question7.setText("0(I have no headaches at all)\n" +
+//                    "5(I have moderate headaches, which come frequently)\n" +
+//                     "10(I have headaches almost all of the time)");
+//            question7.setAnswer("");
+//            question7.setType("scale1-10");
+//            questions.save(question7);
+//
+//            question8.setTitle("Work");
+//            question8.setText("0(I can do as much work as I want to)\n" +
+//                    "5(I cannot do my usual work)\n" +
+//                    "10(I can’t do any work at all)");
+//            question8.setAnswer("");
+//            question8.setType("scale1-10");
+//            questions.save(question8);
+//
+//            question9.setTitle("Concentration");
+//            question9.setText("0(I can concentrate fully when I wast to with no difficulty)\n" +
+//                    "5(I have a fair degree of difficulty in concentrating when I want to)\n" +
+//                    "0(I cannot concentrate at all)");
+//            question9.setAnswer("");
+//            question9.setType("scale1-10");
+//            questions.save(question9);
+//
+//            question10.setTitle("Driving");
+//            question10.setText("0(I can drive my car without any neck pain/n"
+//                    "5(I can’t drive my car as long as I want because of slight pain in my neck)\n" +
+//                    "10(I can’t drive my car at all because of the pain)\n)");
+//            question10.setAnswer("");
+//            question10.setType("scale1-10");
+//            questions.save(question10);
+//
+//
+//
 
 
             ArrayList<Question> questionGroup1 = new ArrayList<Question>();
@@ -260,24 +326,18 @@ public class FinalProjectController {
             questionGroup1.add(question4);
 
 
-
-            Form form2 = new Form();
-
-            form2.setTitle("Neck Pain Disability Index");
-            form2.setName("Neck Pain Disability Index");
-//            form2.setDescription("This questionnaire has been designed to give the doctor information as to how your neck pain has
-          //  affected your
-// This questionnaire has been designed to give the doctor information as to how your neck pain has affected your" +
-//                    " ability to manage in everyday life. Please mark the " +
-//                    "ONE NUMBER in each question, which most closely describes your problem." +
-//                    " We realize you may consider that two of the statements in any one section relate to you," +
-//                    " but only mark the box which most closely describes your problem.");
+        ArrayList<Question> questionGroup2 = new ArrayList<Question>();
+        questionGroup2.add(question5);
+            //questionGroup2.add(question6); 
+//            questionGroup2.add(question7); 
+//            questionGroup2.add(question8); 
+//            questionGroup2.add(question10);  
 //
 
 
 
             form1.setQuestions(questionGroup1);
-           // form2.setQuestions(questionGroup2);
+            form2.setQuestions(questionGroup2);
 
             forms.save(form1);
             forms.save(form2);
@@ -287,19 +347,20 @@ public class FinalProjectController {
 
           //  user.getPatients().add(patient);
 
-        }
+//        }
     }
 
 
 
-    public Form createForm(Form form, Question question){
-        Form form1 = new Form();
-        form1.setTitle("Oswestry Disability Questionnaire\n");
-        form1.setName("Oswestry Disability Questionnaire\n");
-        form1.setDescription("This questionnaire has been designed to give us information as to how your back or leg pain is affecting your ability to manage in everyday life. Please answer by checking the scale for the level which best applies to you.");
+    public Form createForm(String title, String name, String description, List<Question> questions){
 
+        return new Form();
 
+    }
 
+    public ArrayList<Question> creatQuestion (String title, String type, String text, String answer){
+
+        return new ArrayList<>();
     }
 
 
