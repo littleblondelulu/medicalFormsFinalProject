@@ -555,6 +555,12 @@ public class FinalProjectController {
 //    }]
 
 
+    @RequestMapping(path = "patients/{patientId}", method = RequestMethod.GET)
+    public Form form(@PathVariable Integer formId) {
+
+        return forms.findById(formId);
+    }
+
 
 
 
