@@ -449,11 +449,8 @@ public class FinalProjectController {
 //        }
     }
 
-
-
-
+    //no concept of logging in really -- so don't need a logout
     //Need to change this to standard login -- no pw protection
-
     //pw protected login
     @RequestMapping(path = "/login", method = RequestMethod.POST)
     public User login(String username, String password, HttpSession session, HttpServletResponse response) throws Exception {
@@ -469,20 +466,20 @@ public class FinalProjectController {
         return user;
     }
 
-    //no concept of logging in really -- so don't need a logout
 
 
 
 
+
+
+    //return all users
     @RequestMapping(path = "/users", method = RequestMethod.GET)
     public List<User> users() {
 
         return (List) users.findAll();
     }
 
-
-    //ROUTE TO USER IN DATABASE AND SEND TO FRONT END
-    //ASSIGN SESSION
+    //return single doctor (aka user) by id
     @RequestMapping(path = "/users/{id}", method = RequestMethod.GET)
     public User getUser(@PathVariable Integer id) {
         User u = users.findOne(id);
@@ -490,16 +487,7 @@ public class FinalProjectController {
         return u;
     }
 
-
-
-
-
-
-
-
-
-    // GET     /patients --- TELL Aaron to change endpt to this
-    //get /patients
+    //return all patients by doctor (aka user)
     @RequestMapping(path = "/users/{userId}/patients", method = RequestMethod.GET)
     public List<Patient> allPatient(@PathVariable int userId) {
         User u = users.findOne(userId);
@@ -507,28 +495,19 @@ public class FinalProjectController {
         return u.getPatients();
     }
 
-//
-//    Return summary of all the patients.
-//
-//    Format:
-//
-//            [{
-//        firstName: "string",
-//                lastName: "string",
-//                id: number }]
 
 
 
 
 
-
+    //return all patients
     @RequestMapping(path = "/patients", method = RequestMethod.GET)
     public List<Patient> patients() {
 
         return (List) patients.findAll();
     }
 
-
+    //return single patient by Id
     @RequestMapping(path = "patients/{patientId}", method = RequestMethod.GET)
     public Patient patient(@PathVariable Integer patientId) {
 
@@ -540,21 +519,14 @@ public class FinalProjectController {
 
 
 
-
+    //return all forms
     @RequestMapping(path = "/forms", method = RequestMethod.GET)
     public List<Form> forms() {
 
         return (List) forms.findAll();
     }
 
-//    Format:
-//            [{
-//        id: number,
-//                title: "string",
-//                description: "string",
-//    }]
-
-
+    //return single form by Id
     @RequestMapping(path = "forms/{formId}", method = RequestMethod.GET)
     public Form form(@PathVariable Integer formId) {
 
@@ -565,8 +537,8 @@ public class FinalProjectController {
 
 
 
-    //getting a new form here
-    //get one form
+
+
     //Returns a specific form and associates it with a patient
     @RequestMapping(path = "/forms/{formId}/{patientId}", method = RequestMethod.GET)
     public FormPatientViewModel form(@PathVariable Integer formId, @PathVariable Integer patientId) {
@@ -579,41 +551,28 @@ public class FinalProjectController {
     }
 
 
-//    Format:
-//            [{
-//        id: number,
-//                name: "string",
-//                date: number,
-//                patient: {
-//            firstName: "string",
-//                    lastName: "string",
-//        },
-//        questions: [
-//        {
-//            id: number,
-//                    title: "string",
-//                type: "string",
-//                text: "string",
-//        }
-//    ]
-//    }]
 
 
 
+
+
+    //return all questions
     @RequestMapping(path = "/questions", method = RequestMethod.GET)
     public List<Question> questions() {
 
         return (List) questions.findAll();
     }
 
-
-
-
+    //return single question by questionId
     @RequestMapping(path = "questions/{questionId}", method = RequestMethod.GET)
     public Question question(@PathVariable Integer questionId) {
 
         return questions.findById(questionId);
     }
+
+
+
+
 
 
     //post /addResponses
@@ -641,11 +600,6 @@ public class FinalProjectController {
 
 
 
-
-
-
-
-
     //Returns summary of all the records per form.
     @RequestMapping(path = "user/{userId}/records", method = RequestMethod.GET)
     public String recordSummary(/*will probably need to take in a view model class*/) {
@@ -664,13 +618,6 @@ public class FinalProjectController {
 //                    lastName: "string",
 //        }
 //    }]
-
-
-
-
-
-
-
 
 
     //Returns a specific record (form with answers).
