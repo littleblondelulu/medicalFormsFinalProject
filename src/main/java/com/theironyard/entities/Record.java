@@ -11,9 +11,6 @@ public class Record {
     @GeneratedValue
     int id;
 
-    @Column
-    String name;
-
     @ManyToOne
     Form form;
 
@@ -28,17 +25,15 @@ public class Record {
 
     public Record(List<Answer> answers){}
 
-    public Record(String name, Form form, Patient patient, List<Answer> answers, int date) {
-        this.name = name;
+    public Record(Form form, Patient patient, List<Answer> answers, int date) {
         this.form = form;
         this.patient = patient;
         this.answers = answers;
         this.date = date;
     }
 
-    public Record(int id, String name, Form form, Patient patient, List<Answer> answers, int date) {
+    public Record(int id, Form form, Patient patient, List<Answer> answers, int date) {
         this.id = id;
-        this.name = name;
         this.form = form;
         this.patient = patient;
         this.answers = answers;
@@ -51,14 +46,6 @@ public class Record {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public String getName() {
-        return this.name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public Form getForm() {

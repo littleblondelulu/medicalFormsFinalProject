@@ -50,7 +50,7 @@ public class FinalProjectController {
 
 
 
-//        if (users.count() == 0) {
+        if (users.count() == 0) {
             User user = new User();
             user.setName("Dr. Barringer");
 
@@ -446,7 +446,7 @@ public class FinalProjectController {
 
           //  user.getPatients().add(patient);
 
-//        }
+        }
     }
 
     //no concept of logging in really -- so don't need a logout
@@ -579,10 +579,13 @@ public class FinalProjectController {
     //POST    /records/{formId}/{patientId}
     // Submit answers for {formId} filled in by {patientId}.
     @RequestMapping(path = "/records/{formId}/{patientId}", method = RequestMethod.POST)
-    public void records(List<Answer> answers, Integer patientId) {
+    public void records(@PathVariable Integer formId, List<Answer> answers, @PathVariable Integer patientId) {
         Patient p = patients.findById(patientId);
+        Form f = forms.findById(formId);
         Record record = new Record(answers);
+        records.save(record);
         p.getRecords().add(record);
+        patients.save(p);
         //will need to use a view model class here as well????
     }
 
@@ -597,8 +600,6 @@ public class FinalProjectController {
 //        }
 //    ]
 //    }]
-
-
 
     //Returns summary of all the records per form.
     @RequestMapping(path = "user/{userId}/records", method = RequestMethod.GET)
@@ -620,20 +621,19 @@ public class FinalProjectController {
 //    }]
 
 
+    //return all records
+    @RequestMapping(path = "/records", method = RequestMethod.GET)
+    public List<Record> records() {
+
+        return (List) records.findAll();
+    }
+
     //Returns a specific record (form with answers).
-    @RequestMapping(path = "/record/{recordId}", method = RequestMethod.GET)
+    @RequestMapping(path = "/records/{recordId}", method = RequestMethod.GET)
     public Record recordAnswers(Integer id){
         Record record = records.findById(id);
 
         return record;
     }
 
-
-//    Format:
-//            [{
-//
 }
-
-//what data would be specific to these endpts?
-//FormPatientViewModel
-//new FormPatientViewModel(forms.findById(formId), patients.findById(patientId));

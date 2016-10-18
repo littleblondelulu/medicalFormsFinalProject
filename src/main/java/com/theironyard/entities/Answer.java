@@ -9,17 +9,17 @@ public class Answer {
     @GeneratedValue
     int id;
 
-    @Column(nullable = false)
-    int questionId;
+    @ManyToOne
+    Question question;
 
     @Column(nullable = false)
-    String answer;
+    String text;
 
     public Answer(){};
 
-    public Answer(int questionId, String answer) {
-        this.questionId = questionId;
-        this.answer = answer;
+    public Answer(Question question, String answer) {
+        this.question = question;
+        this.text = text;
     }
 
     public int getId() {
@@ -30,19 +30,20 @@ public class Answer {
         this.id = id;
     }
 
-    public int getQuestionId() {
-        return this.questionId;
+    public Question getQuestion() {
+        return this.question;
     }
 
-    public void setQuestionId(int questionId) {
-        this.questionId = questionId;
+    public void setQuestion(Question question) {
+        this.question = question;
     }
 
-    public String getAnswerResponse() {
-        return this.answer;
+    public String getText() {
+        return this.text;
     }
 
-    public void setAnswerResponse(String answerResponse) {
-        this.answer = answer;
+    public void setText(String text) {
+        this.text = text;
     }
+
 }
