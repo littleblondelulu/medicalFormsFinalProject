@@ -216,7 +216,7 @@ public class FinalProjectController {
                 "if you do, how much they bother you. Answer these questions by choosing the\n" +
                 "appropriate number. While answering these questions, please consider your\n" +
                 "symptoms over the last 3 months. All items use the following format with\n" +
-                "a response scale from 0-4.");
+                "a response scale from 1-10.");
 
 
             Question question = new Question();
@@ -237,6 +237,13 @@ public class FinalProjectController {
         Question question13 = new Question();
         Question question14 = new Question();
         Question question15 = new Question();
+
+
+        Question question16 = new Question();
+        Question question17 = new Question();
+        Question question18 = new Question();
+        Question question19 = new Question();
+
 
 
         question.setTitle("Pain intensity\n");
@@ -366,6 +373,35 @@ public class FinalProjectController {
         questions.save(question15);
 
 
+
+
+
+        question16.setTitle("Pelvic Organ Prolapse Distress Inventory 6 (POPDI-6)");
+        question16.setText("Do you usually experience pressure in the lower abdomen?");
+        question16.setAnswer("");
+        question16.setType("scale1-10");
+        questions.save(question16);
+
+        question17.setTitle("Colorectal-Anal Distress Inventory 9 (CRAD-8)");
+        question17.setText("Do you feel you need to strain too hard to have a bowel movement?");
+        question17.setAnswer("");
+        question17.setType("scale1-10");
+        questions.save(question17);
+
+        question18.setTitle("Urinary Distress Inventory 6 (UDI-6)");
+        question18.setText("Do you experience frequent urination?");
+        question18.setAnswer("");
+        question18.setType("scale1-10");
+        questions.save(question18);
+
+        question19.setTitle("Urinary Distress Inventory 6 (UDI-6)");
+        question19.setText("Do you usually experience difficulty emptying your bladder?");
+        question19.setAnswer("");
+        question19.setType("scale1-10");
+        questions.save(question19);
+
+
+
         ArrayList<Question> questionGroup1 = new ArrayList<Question>();
             questionGroup1.add(question);
             questionGroup1.add(question1);
@@ -389,16 +425,22 @@ public class FinalProjectController {
         questionGroup3.add(question14);
         questionGroup3.add(question15);
 
+        ArrayList<Question> questionGroup4 = new ArrayList<Question>();
+        questionGroup4.add(question16);
+        questionGroup4.add(question17);
+        questionGroup4.add(question18);
+        questionGroup4.add(question19);
 
 
-            form1.setQuestions(questionGroup1);
-            form2.setQuestions(questionGroup2);
+        form1.setQuestions(questionGroup1);
+        form2.setQuestions(questionGroup2);
         form3.setQuestions(questionGroup3);
+        form4.setQuestions(questionGroup4);
 
             forms.save(form1);
             forms.save(form2);
             forms.save(form3);
-        forms.save(form4);
+            forms.save(form4);
 
 
 
