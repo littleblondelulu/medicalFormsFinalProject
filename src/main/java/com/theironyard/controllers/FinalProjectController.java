@@ -43,7 +43,14 @@ public class FinalProjectController {
     @PostConstruct
     public void init() {
 
-        if (users.count() == 0) {
+            forms.deleteAll();
+            users.deleteAll();
+            questions.deleteAll();
+            patients.deleteAll();
+
+
+
+//        if (users.count() == 0) {
             User user = new User();
             user.setName("Dr. Barringer");
 
