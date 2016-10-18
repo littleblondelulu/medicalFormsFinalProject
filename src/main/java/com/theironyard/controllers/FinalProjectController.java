@@ -377,25 +377,25 @@ public class FinalProjectController {
 
 
         question16.setTitle("Pelvic Organ Prolapse Distress Inventory 6 (POPDI-6)");
-        question16.setText("Do you usually experience pressure in the lower abdomen?");
+        question16.setText("On a scale of 1-10, do you usually experience pressure in the lower abdomen?");
         question16.setAnswer("");
         question16.setType("scale1-10");
         questions.save(question16);
 
         question17.setTitle("Colorectal-Anal Distress Inventory 9 (CRAD-8)");
-        question17.setText("Do you feel you need to strain too hard to have a bowel movement?");
+        question17.setText("On a scale of 1-10, do you feel you need to strain too hard to have a bowel movement?");
         question17.setAnswer("");
         question17.setType("scale1-10");
         questions.save(question17);
 
         question18.setTitle("Urinary Distress Inventory 6 (UDI-6)");
-        question18.setText("Do you experience frequent urination?");
+        question18.setText("On a scale of 1-10, do you experience frequent urination?");
         question18.setAnswer("");
         question18.setType("scale1-10");
         questions.save(question18);
 
         question19.setTitle("Urinary Distress Inventory 6 (UDI-6)");
-        question19.setText("Do you usually experience difficulty emptying your bladder?");
+        question19.setText("On a scale of 1-10, do you usually experience difficulty emptying your bladder?");
         question19.setAnswer("");
         question19.setType("scale1-10");
         questions.save(question19);
