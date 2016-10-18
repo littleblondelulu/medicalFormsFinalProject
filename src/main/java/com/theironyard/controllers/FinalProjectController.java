@@ -200,7 +200,23 @@ public class FinalProjectController {
             form2.setName("Neck Pain Disability Index");
             form2.setDescription("This questionnaire has been designed to give the doctor information as to how your neck pain has affected your ability to manage in everyday life. Please mark the ONE NUMBER in each question, which most closely describes your problem. We realize you may consider that two of the statements in any one section relate to you, but only mark the box which most closely describes your problem");
 
+            Form form3 = new Form();
 
+            form3.setTitle("The Patient-Specific Functional Scale");
+            form3.setName("The Patient-Specific Functional Scale");
+            form3.setDescription("I am going to ask you to identify up to three important activities that you are unable to do or are having difficulty\n" +
+                    "with as a result of your _________________ problem.");
+
+            Form form4 = new Form();
+
+        form4.setTitle("PFDI-20");
+        form4.setName("PFDI-20");
+        form4.setDescription("Please answer all the questions in the following survey. These questions\n" +
+                "will ask you if you have certain bladder, pelvic, or bowel symptoms and,\n" +
+                "if you do, how much they bother you. Answer these questions by choosing the\n" +
+                "appropriate number. While answering these questions, please consider your\n" +
+                "symptoms over the last 3 months. All items use the following format with\n" +
+                "a response scale from 0-4.");
 
 
             Question question = new Question();
@@ -216,6 +232,11 @@ public class FinalProjectController {
         Question question9 = new Question();
         Question question10 = new Question();
 
+        Question question11 = new Question();
+        Question question12 = new Question();
+        Question question13 = new Question();
+        Question question14 = new Question();
+        Question question15 = new Question();
 
 
         question.setTitle("Pain intensity\n");
@@ -266,6 +287,12 @@ public class FinalProjectController {
             question4.setType("scale1-10");
             questions.save(question4);
 
+
+
+
+
+
+
         question5.setTitle("Personal Care (Washing, Dressing, etc");
         question5.setText("0(I can look after myself normally without causing extra pain)\n" + "5(I need some help but manage most of my personal care)\n" + "10(i do not get dressed, I wash with difficulty and stay in bed)\n)");
         question5.setAnswer("");
@@ -304,6 +331,41 @@ public class FinalProjectController {
 
 
 
+
+
+
+        question11.setTitle("Initial Assessment");
+        question11.setText("Today, are there any activities that you are unable to do\n" +
+                "or having difficulty with because of your _________________ problem?\n");
+        question11.setAnswer("");
+        question11.setType("fillIn");
+        questions.save(question11);
+
+        question12.setTitle("Activities");
+        question12.setText("Please name a specific activity that causes you pain. _______________");
+        question12.setAnswer("");
+        question12.setType("fillIn");
+        questions.save(question12);
+
+        question13.setTitle("Activities");
+        question13.setText("Please rate your pain during this activity on the scale below.");
+        question13.setAnswer("");
+        question13.setType("scale1-10");
+        questions.save(question13);
+
+        question14.setTitle("Activities");
+        question14.setText("Please name a specific activity that causes you pain. _______________");
+        question14.setAnswer("");
+        question14.setType("fillIn");
+        questions.save(question14);
+
+        question15.setTitle("Activities");
+        question15.setText("Please rate your pain during this activity on the scale below.");
+        question15.setAnswer("");
+        question15.setType("scale1-10");
+        questions.save(question15);
+
+
         ArrayList<Question> questionGroup1 = new ArrayList<Question>();
             questionGroup1.add(question);
             questionGroup1.add(question1);
@@ -320,16 +382,23 @@ public class FinalProjectController {
         questionGroup2.add(question9);
         questionGroup2.add(question10);
 
-
+        ArrayList<Question> questionGroup3 = new ArrayList<Question>();
+        questionGroup3.add(question11);
+        questionGroup3.add(question12);
+        questionGroup3.add(question13);
+        questionGroup3.add(question14);
+        questionGroup3.add(question15);
 
 
 
             form1.setQuestions(questionGroup1);
             form2.setQuestions(questionGroup2);
+        form3.setQuestions(questionGroup3);
 
             forms.save(form1);
             forms.save(form2);
-
+            forms.save(form3);
+        forms.save(form4);
 
 
 
