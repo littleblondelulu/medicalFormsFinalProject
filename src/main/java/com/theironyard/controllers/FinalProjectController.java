@@ -582,7 +582,7 @@ public class FinalProjectController {
     public void records(@PathVariable Integer formId, List<Answer> answers, @PathVariable Integer patientId) {
         Patient p = patients.findById(patientId);
         Form f = forms.findById(formId);
-        Record record = new Record(answers);
+        Record record = new Record(f, p, answers);
         records.save(record);
         p.getRecords().add(record);
         patients.save(p);

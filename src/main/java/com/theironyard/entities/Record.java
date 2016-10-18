@@ -20,24 +20,22 @@ public class Record {
     @OneToMany
     List<Answer> answers;
 
-    @Column
-    int date;
+  //  @Column
+    //int date;
 
     public Record(List<Answer> answers){}
 
-    public Record(Form form, Patient patient, List<Answer> answers, int date) {
+    public Record(Form form, Patient patient, List<Answer> answers) {
         this.form = form;
         this.patient = patient;
         this.answers = answers;
-        this.date = date;
     }
 
-    public Record(int id, Form form, Patient patient, List<Answer> answers, int date) {
+    public Record(int id, Form form, Patient patient, List<Answer> answers) {
         this.id = id;
         this.form = form;
         this.patient = patient;
         this.answers = answers;
-        this.date = date;
     }
 
     public int getId() {
@@ -72,13 +70,6 @@ public class Record {
         this.answers = answers;
     }
 
-    public int getDate() {
-        return this.date;
-    }
-
-    public void setDate(int date) {
-        this.date = date;
-    }
 
 //WILL NEED TO SET THE FIELDS BELOW TO WHAT I FOUND IN REPOSITORY
 
