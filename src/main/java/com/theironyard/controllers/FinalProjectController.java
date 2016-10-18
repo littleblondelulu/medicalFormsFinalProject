@@ -43,14 +43,7 @@ public class FinalProjectController {
     @PostConstruct
     public void init() {
 
-            forms.deleteAll();
-            users.deleteAll();
-            questions.deleteAll();
-            patients.deleteAll();
-
-
-
-//        if (users.count() == 0) {
+        if (users.count() == 0) {
             User user = new User();
             user.setName("Dr. Barringer");
 
@@ -449,18 +442,6 @@ public class FinalProjectController {
 //        }
     }
 
-
-
-    public Form createForm(String title, String name, String description, List<Question> questions){
-
-        return new Form();
-
-    }
-
-    public ArrayList<Question> creatQuestion (String title, String type, String text, String answer){
-
-        return new ArrayList<>();
-    }
 
 
 
