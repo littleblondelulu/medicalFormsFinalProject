@@ -210,11 +210,11 @@ public class FinalProjectController {
             Question question4 = new Question();
 
         Question question5 = new Question();
-       // Question question6 = new Question();
-//        Question question7 = new Question();
-//        Question question8 = new Question();
-//        Question question9 = new Question();
-//        Question question10 = new Question();
+        Question question6 = new Question();
+        Question question7 = new Question();
+        Question question8 = new Question();
+        Question question9 = new Question();
+        Question question10 = new Question();
 
 
 
@@ -272,53 +272,39 @@ public class FinalProjectController {
         question5.setType("scale1-10");
         questions.save(question5);
 
+        question6.setTitle("Reading");
+        question6.setText("0(I can read as much as I want to with no pain in my neck)\n" + "5(I can’t read as much as I want because of moderate pain in my neck)\n" + "10(I cannot read at all) \n");
+        question6.setAnswer("");
+        question6.setType("scale1-10");
+        questions.save(question6);
 
-//            question6.setTitle("Reading");
-//            question6.setText("0(I can read as much as I want to with no pain in my neck)\n" +
-//                    "5(I cna't read as much as I want with moderate pain in my neck)\n" +
-//                    "10(I cannot read at all)";
-//            question6.setAnswer("");
-//            question6.setType("scale1-10");
-//            questions.save(question6);
+        question7.setTitle("Headaches");
+        question7.setText("0(I have no headaches at all)\n" +  "5(I have moderate headaches, which come frequently)\n" + "10(I have headaches almost all of the time)");
+        question7.setAnswer("");
+        question7.setType("scale1-10");
+        questions.save(question7);
 
-//
-//            question7.setTitle("Headaches");
-//            question7.setText("0(I have no headaches at all)\n" +
-//                    "5(I have moderate headaches, which come frequently)\n" +
-//                     "10(I have headaches almost all of the time)");
-//            question7.setAnswer("");
-//            question7.setType("scale1-10");
-//            questions.save(question7);
-//
-//            question8.setTitle("Work");
-//            question8.setText("0(I can do as much work as I want to)\n" +
-//                    "5(I cannot do my usual work)\n" +
-//                    "10(I can’t do any work at all)");
-//            question8.setAnswer("");
-//            question8.setType("scale1-10");
-//            questions.save(question8);
-//
-//            question9.setTitle("Concentration");
-//            question9.setText("0(I can concentrate fully when I wast to with no difficulty)\n" +
-//                    "5(I have a fair degree of difficulty in concentrating when I want to)\n" +
-//                    "0(I cannot concentrate at all)");
-//            question9.setAnswer("");
-//            question9.setType("scale1-10");
-//            questions.save(question9);
-//
-//            question10.setTitle("Driving");
-//            question10.setText("0(I can drive my car without any neck pain/n"
-//                    "5(I can’t drive my car as long as I want because of slight pain in my neck)\n" +
-//                    "10(I can’t drive my car at all because of the pain)\n)");
-//            question10.setAnswer("");
-//            question10.setType("scale1-10");
-//            questions.save(question10);
-//
-//
-//
+        question8.setTitle("Work");
+        question8.setText("0(I can do as much work as I want to)\n" + "5(I cannot do my usual work)\n " + "10(I can’t do any work at all)");
+        question8.setAnswer("");
+        question8.setType("scale1-10");
+        questions.save(question8);
+
+        question9.setTitle("Concentration");
+        question9.setText("0(I can concentrate fully when I wast to with no difficulty)\n" + "5(I have a fair degree of difficulty in concentrating when I want to)\n" + "10(I cannot concentrate at all)\n");
+        question9.setAnswer("");
+        question9.setType("scale1-10");
+        questions.save(question9);
+
+        question10.setTitle("Driving");
+        question10.setText("0(I can drive my car without any neck pain)\n" + "5(I can’t drive my car as long as I want because of slight pain in my neck)\n" + "10(I can’t drive my car at all because of the pain)\n");
+        question10.setAnswer("");
+        question10.setType("scale1-10");
+        questions.save(question10);
 
 
-            ArrayList<Question> questionGroup1 = new ArrayList<Question>();
+
+        ArrayList<Question> questionGroup1 = new ArrayList<Question>();
             questionGroup1.add(question);
             questionGroup1.add(question1);
             questionGroup1.add(question2);
@@ -328,11 +314,13 @@ public class FinalProjectController {
 
         ArrayList<Question> questionGroup2 = new ArrayList<Question>();
         questionGroup2.add(question5);
-            //questionGroup2.add(question6); 
-//            questionGroup2.add(question7); 
-//            questionGroup2.add(question8); 
-//            questionGroup2.add(question10);  
-//
+        questionGroup2.add(question6);
+        questionGroup2.add(question7);
+        questionGroup2.add(question8);
+        questionGroup2.add(question9);
+        questionGroup2.add(question10);
+
+
 
 
 
