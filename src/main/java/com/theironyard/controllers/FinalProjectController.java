@@ -506,7 +506,9 @@ public class FinalProjectController {
 
         Record r = new Record(f, p, answersList);
 
+        //add records to patient records list
         records.save(r);
+        p.getRecords().add(r);
     }
 
    // Returns summary of all the records per form.
