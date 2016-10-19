@@ -120,7 +120,7 @@ public class FinalProjectController {
 
             Patient patient12 = new Patient();
             patient12.setFirstName("Libby");
-            patient12.setLastName("Van Vurren");
+            patient12.setLastName("Pendergast");
             patients.save(patient12);
 
             Patient patient13 = new Patient();
