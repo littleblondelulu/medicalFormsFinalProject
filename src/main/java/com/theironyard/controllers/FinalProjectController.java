@@ -504,11 +504,11 @@ public class FinalProjectController {
     }
 
     //Returns summary of all the records per form.
-    @RequestMapping(path = "user/{userId}/records", method = RequestMethod.GET)
-    public String recordSummary(/*will probably need to take in a view model class*/) {
-        //need to add code here for the view model class
-        return "";
-    }
+    @RequestMapping(path = "patients/{patientId}/records", method = RequestMethod.GET)
+    public List<Record> recordByPatient(@PathVariable Integer patientId) {
+        Patient p = patients.findOne(patientId);
+
+        return p.getRecords();    }
 
     //return all records
     @RequestMapping(path = "/records", method = RequestMethod.GET)
