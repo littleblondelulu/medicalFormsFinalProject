@@ -24,7 +24,6 @@ public class Form {
     @OneToMany
     List<Question> questions;
 
-
     public Form(){}
 
     public Form(String title, String name, String description, List<Question> questions) {

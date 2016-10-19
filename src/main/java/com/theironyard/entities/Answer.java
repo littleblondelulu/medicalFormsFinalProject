@@ -15,11 +15,13 @@ public class Answer {
     @Column(nullable = false)
     String text;
 
-    public Answer(){};
+    public Answer(){
+
+    }
 
     public Answer(Question question, String answer) {
         this.question = question;
-        this.text = text;
+        this.text = answer;
     }
 
     public int getId() {

@@ -23,6 +23,10 @@ public class Record {
   //  @Column
     //int date;
 
+    public Record() {
+
+    }
+
     public Record(List<Answer> answers){}
 
     public Record(Form form, Patient patient, List<Answer> answers) {

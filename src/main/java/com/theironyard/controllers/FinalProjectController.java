@@ -4,10 +4,7 @@ import com.theironyard.entities.*;
 import com.theironyard.services.*;
 import com.theironyard.utilities.PasswordStorage;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpServletResponse;
@@ -579,27 +576,23 @@ public class FinalProjectController {
     //POST    /records/{formId}/{patientId}
     // Submit answers for {formId} filled in by {patientId}.
     @RequestMapping(path = "/records/{formId}/{patientId}", method = RequestMethod.POST)
-    public void records(@PathVariable Integer formId, List<Answer> answers, @PathVariable Integer patientId) {
-        Patient p = patients.findById(patientId);
+    public void records(@PathVariable Integer formId, @PathVariable Integer patientId, @RequestBody List<String> answers) {
         Form f = forms.findById(formId);
-        Record record = new Record(f, p, answers);
-        records.save(record);
-        p.getRecords().add(record);
-        patients.save(p);
-        //will need to use a view model class here as well????
-    }
+        Patient p = patients.findById(patientId);
 
-//    Format:
-//
-//            [{
-//        id: number,
-//                questions: [
-//        {
-//            id: number,
-//                    answer: string,
-//        }
-//    ]
-//    }]
+        List<Question> questions = f.getQuestions();
+        List<Answer> answersList = new ArrayList<>();
+
+        for(int i = 0;i < answers.size();i++) {
+            answersList.add(new Answer(questions.get(i), answers.get(i)));
+        }
+
+        this.answers.save(answersList);
+
+        Record r = new Record(f, p, answersList);
+
+        records.save(r);
+    }
 
     //Returns summary of all the records per form.
     @RequestMapping(path = "user/{userId}/records", method = RequestMethod.GET)
@@ -623,7 +616,7 @@ public class FinalProjectController {
 
     //return all records
     @RequestMapping(path = "/records", method = RequestMethod.GET)
-    public List<Record> records() {
+    public List<Record> getRecords() {
 
         return (List) records.findAll();
     }

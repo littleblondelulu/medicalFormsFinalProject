@@ -22,7 +22,9 @@ public class Question {
     @Column
     String answer;
 
-    public Question(){};
+    public Question(){
+        
+    }
 
     public Question(int id, String title, String type, String text, String answer) {
         this.id = id;
