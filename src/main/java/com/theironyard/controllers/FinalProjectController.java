@@ -505,7 +505,7 @@ public class FinalProjectController {
         this.answers.save(answersList);
 
         Record r = new Record(f, p, answersList);
-        p.getRecords().add(r);
+//        p.getRecords().add(r);
 
         //add records to patient records list
         records.save(r);
