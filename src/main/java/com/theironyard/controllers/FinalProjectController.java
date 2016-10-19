@@ -519,8 +519,8 @@ public class FinalProjectController {
 
     //Returns a specific record (form with answers).
     @RequestMapping(path = "/records/{recordId}", method = RequestMethod.GET)
-    public Record record(Integer recordId) {
-      
+    public Record record(@PathVariable Integer recordId) {
+
         return records.findById(recordId);
     }
 
