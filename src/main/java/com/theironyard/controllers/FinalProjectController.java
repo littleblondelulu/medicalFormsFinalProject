@@ -505,10 +505,11 @@ public class FinalProjectController {
         this.answers.save(answersList);
 
         Record r = new Record(f, p, answersList);
+        p.getRecords().add(r);
 
         //add records to patient records list
         records.save(r);
-        p.getRecords().add(r);
+
     }
 
    // Returns summary of all the records per form.
