@@ -19,19 +19,15 @@ public class Question {
     @Column(nullable = false)
     String text;
 
-    @Column
-    String answer;
-
     public Question(){
-        
+
     }
 
-    public Question(int id, String title, String type, String text, String answer) {
+    public Question(int id, String title, String type, String text) {
         this.id = id;
         this.title = title;
         this.type = type;
         this.text = text;
-        this.answer = answer;
     }
 
     public int getId() {
@@ -64,14 +60,6 @@ public class Question {
 
     public void setText(String text) {
         this.text = text;
-    }
-
-    public String getAnswer() {
-        return this.answer;
-    }
-
-    public void setAnswer(String answer) {
-        this.answer = answer;
     }
 
 }

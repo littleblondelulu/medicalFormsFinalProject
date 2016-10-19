@@ -36,15 +36,13 @@ public class FinalProjectController {
     RecordRepository records;
 
 
-
     @PostConstruct
     public void init() {
 
-            forms.deleteAll();
-            users.deleteAll();
-            questions.deleteAll();
-            patients.deleteAll();
-
+        forms.deleteAll();
+        users.deleteAll();
+        questions.deleteAll();
+        patients.deleteAll();
 
 
         if (users.count() == 0) {
@@ -56,11 +54,6 @@ public class FinalProjectController {
 
             User user2 = new User();
             user2.setName("Dr. Sanchez");
-
-
-
-
-
 
 
             Patient patient = new Patient();
@@ -94,8 +87,6 @@ public class FinalProjectController {
             patients.save(patient5);
 
 
-
-
             Patient patient6 = new Patient();
             patient6.setFirstName("Ron");
             patient6.setLastName("Burgundy");
@@ -110,8 +101,6 @@ public class FinalProjectController {
             patient8.setFirstName("Steve");
             patient8.setLastName("Jobs");
             patients.save(patient8);
-
-
 
 
             Patient patient9 = new Patient();
@@ -140,12 +129,6 @@ public class FinalProjectController {
             patients.save(patient13);
 
 
-
-
-
-
-
-
             ArrayList<Patient> patientsGroup1 = new ArrayList<Patient>();
             ArrayList<Patient> patientsGroup2 = new ArrayList<Patient>();
             ArrayList<Patient> patientsGroup3 = new ArrayList<Patient>();
@@ -158,15 +141,18 @@ public class FinalProjectController {
             patientsGroup1.add(patient4);
             patientsGroup1.add(patient5);
 
+
             patientsGroup2.add(patient6);
             patientsGroup2.add(patient7);
             patientsGroup2.add(patient8);
+
 
             patientsGroup3.add(patient9);
             patientsGroup3.add(patient10);
             patientsGroup3.add(patient11);
             patientsGroup3.add(patient12);
             patientsGroup3.add(patient13);
+
 
             user.setPatients(patientsGroup1);
             user1.setPatients(patientsGroup2);
@@ -178,27 +164,19 @@ public class FinalProjectController {
             users.save(user2);
 
 
-
-
-
-
-
-
             Form form1 = new Form();
-
             form1.setTitle("Oswestry Disability Questionnaire\n");
             form1.setName("Oswestry Disability Questionnaire\n");
             form1.setDescription("This questionnaire has been designed to give us information as to how your back or leg pain is affecting your ability to manage in everyday life. Please answer by checking the scale for the level which best applies to you.");
 
 
             Form form2 = new Form();
-
             form2.setTitle("Neck Pain Disability Index");
             form2.setName("Neck Pain Disability Index");
             form2.setDescription("This questionnaire has been designed to give the doctor information as to how your neck pain has affected your ability to manage in everyday life. Please mark the ONE NUMBER in each question, which most closely describes your problem. We realize you may consider that two of the statements in any one section relate to you, but only mark the box which most closely describes your problem");
 
-            Form form3 = new Form();
 
+            Form form3 = new Form();
             form3.setTitle("The Patient-Specific Functional Scale");
             form3.setName("The Patient-Specific Functional Scale");
             form3.setDescription("I am going to ask you to identify up to three important activities that you are unable to do or are having difficulty\n" +
@@ -206,14 +184,14 @@ public class FinalProjectController {
 
             Form form4 = new Form();
 
-        form4.setTitle("PFDI-20");
-        form4.setName("PFDI-20");
-        form4.setDescription("Please answer all the questions in the following survey. These questions\n" +
-                "will ask you if you have certain bladder, pelvic, or bowel symptoms and,\n" +
-                "if you do, how much they bother you. Answer these questions by choosing the\n" +
-                "appropriate number. While answering these questions, please consider your\n" +
-                "symptoms over the last 3 months. All items use the following format with\n" +
-                "a response scale from 1-10.");
+            form4.setTitle("PFDI-20");
+            form4.setName("PFDI-20");
+            form4.setDescription("Please answer all the questions in the following survey. These questions\n" +
+                    "will ask you if you have certain bladder, pelvic, or bowel symptoms and,\n" +
+                    "if you do, how much they bother you. Answer these questions by choosing the\n" +
+                    "appropriate number. While answering these questions, please consider your\n" +
+                    "symptoms over the last 3 months. All items use the following format with\n" +
+                    "a response scale from 1-10.");
 
 
             Question question = new Question();
@@ -222,184 +200,146 @@ public class FinalProjectController {
             Question question3 = new Question();
             Question question4 = new Question();
 
-        Question question5 = new Question();
-        Question question6 = new Question();
-        Question question7 = new Question();
-        Question question8 = new Question();
-        Question question9 = new Question();
-        Question question10 = new Question();
+            Question question5 = new Question();
+            Question question6 = new Question();
+            Question question7 = new Question();
+            Question question8 = new Question();
+            Question question9 = new Question();
+            Question question10 = new Question();
 
-        Question question11 = new Question();
-        Question question12 = new Question();
-        Question question13 = new Question();
-        Question question14 = new Question();
-        Question question15 = new Question();
-
-
-        Question question16 = new Question();
-        Question question17 = new Question();
-        Question question18 = new Question();
-        Question question19 = new Question();
+            Question question11 = new Question();
+            Question question12 = new Question();
+            Question question13 = new Question();
+            Question question14 = new Question();
+            Question question15 = new Question();
 
 
+            Question question16 = new Question();
+            Question question17 = new Question();
+            Question question18 = new Question();
+            Question question19 = new Question();
 
-        question.setTitle("Pain intensity\n");
+
+            question.setTitle("Pain intensity\n");
             question.setText("0(I have no pain at the moment) \n" +
                     "5(The pain is fairly severe at the moment)\n" +
                     "10(The pain is the worst imaginable at the moment)\n");
-            question.setAnswer("");
             question.setType("scale1-10");
             questions.save(question);
-
 
 
             question1.setTitle("Lifting\n");
             question1.setText("0(I can lift heavy weights without extra pain)\n" +
                     "5(Pain prevents me lifting heavy weights but I can manage light to medium weights if they are conveniently positioned)\n" +
                     "10(I cannot lift or carry anything)\n");
-            question1.setAnswer("");
             question1.setType("scale1-10");
             questions.save(question1);
-
 
 
             question2.setTitle("Walking\n");
             question2.setText("0(Pain does not prevent me walking any distance)\n" +
                     "5(Pain prevents me from walking more than 500 metres)\n" +
                     "10(I am in bed most of the time)\n");
-            question2.setAnswer("");
             question2.setType("scale1-10");
             questions.save(question2);
-
 
 
             question3.setTitle("Sitting\n");
             question3.setText("0(I can sit in any chair as long as I like)\n" +
                     "5(Pain prevents me from sitting more than 30 mintutes)\n" +
                     "10(Pain prevents me from sitting at all)\n");
-            question3.setAnswer("");
             question3.setType("scale1-10");
             questions.save(question3);
-
 
 
             question4.setTitle("Sleeping\n");
             question4.setText("0(My sleep is never disturbed by pain)\n" +
                     "5(Pain prevents me from standing for more than 30 minutes)\n" +
                     "10(Pain prevents me from standing at all)\n");
-            question4.setAnswer("");
             question4.setType("scale1-10");
             questions.save(question4);
 
 
+            question5.setTitle("Personal Care (Washing, Dressing, etc");
+            question5.setText("0(I can look after myself normally without causing extra pain)\n" + "5(I need some help but manage most of my personal care)\n" + "10(i do not get dressed, I wash with difficulty and stay in bed)\n)");
+            question5.setType("scale1-10");
+            questions.save(question5);
+
+            question6.setTitle("Reading");
+            question6.setText("0(I can read as much as I want to with no pain in my neck)\n" + "5(I can’t read as much as I want because of moderate pain in my neck)\n" + "10(I cannot read at all) \n");
+            question6.setType("scale1-10");
+            questions.save(question6);
+
+            question7.setTitle("Headaches");
+            question7.setText("0(I have no headaches at all)\n" + "5(I have moderate headaches, which come frequently)\n" + "10(I have headaches almost all of the time)");
+            question7.setType("scale1-10");
+            questions.save(question7);
+
+            question8.setTitle("Work");
+            question8.setText("0(I can do as much work as I want to)\n" + "5(I cannot do my usual work)\n " + "10(I can’t do any work at all)");
+            question8.setType("scale1-10");
+            questions.save(question8);
+
+            question9.setTitle("Concentration");
+            question9.setText("0(I can concentrate fully when I wast to with no difficulty)\n" + "5(I have a fair degree of difficulty in concentrating when I want to)\n" + "10(I cannot concentrate at all)\n");
+            question9.setType("scale1-10");
+            questions.save(question9);
+
+            question10.setTitle("Driving");
+            question10.setText("0(I can drive my car without any neck pain)\n" + "5(I can’t drive my car as long as I want because of slight pain in my neck)\n" + "10(I can’t drive my car at all because of the pain)\n");
+            question10.setType("scale1-10");
+            questions.save(question10);
 
 
+            question11.setTitle("Initial Assessment");
+            question11.setText("Today, are there any activities that you are unable to do\n" +
+                    "or having difficulty with because of your _________________ problem?\n");
+            question11.setType("fillIn");
+            questions.save(question11);
+
+            question12.setTitle("Activities");
+            question12.setText("Please name a specific activity that causes you pain. _______________");
+            question12.setType("fillIn");
+            questions.save(question12);
+
+            question13.setTitle("Activities");
+            question13.setText("Please rate your pain during this activity on the scale below.");
+            question13.setType("scale1-10");
+            questions.save(question13);
+
+            question14.setTitle("Activities");
+            question14.setText("Please name a specific activity that causes you pain. _______________");
+            question14.setType("fillIn");
+            questions.save(question14);
+
+            question15.setTitle("Activities");
+            question15.setText("Please rate your pain during this activity on the scale below.");
+            question15.setType("scale1-10");
+            questions.save(question15);
 
 
+            question16.setTitle("Pelvic Organ Prolapse Distress Inventory 6 (POPDI-6)");
+            question16.setText("On a scale of 1-10, do you usually experience pressure in the lower abdomen?");
+            question16.setType("scale1-10");
+            questions.save(question16);
 
-        question5.setTitle("Personal Care (Washing, Dressing, etc");
-        question5.setText("0(I can look after myself normally without causing extra pain)\n" + "5(I need some help but manage most of my personal care)\n" + "10(i do not get dressed, I wash with difficulty and stay in bed)\n)");
-        question5.setAnswer("");
-        question5.setType("scale1-10");
-        questions.save(question5);
+            question17.setTitle("Colorectal-Anal Distress Inventory 9 (CRAD-8)");
+            question17.setText("On a scale of 1-10, do you feel you need to strain too hard to have a bowel movement?");
+            question17.setType("scale1-10");
+            questions.save(question17);
 
-        question6.setTitle("Reading");
-        question6.setText("0(I can read as much as I want to with no pain in my neck)\n" + "5(I can’t read as much as I want because of moderate pain in my neck)\n" + "10(I cannot read at all) \n");
-        question6.setAnswer("");
-        question6.setType("scale1-10");
-        questions.save(question6);
+            question18.setTitle("Urinary Distress Inventory 6 (UDI-6)");
+            question18.setText("On a scale of 1-10, do you experience frequent urination?");
+            question18.setType("scale1-10");
+            questions.save(question18);
 
-        question7.setTitle("Headaches");
-        question7.setText("0(I have no headaches at all)\n" +  "5(I have moderate headaches, which come frequently)\n" + "10(I have headaches almost all of the time)");
-        question7.setAnswer("");
-        question7.setType("scale1-10");
-        questions.save(question7);
-
-        question8.setTitle("Work");
-        question8.setText("0(I can do as much work as I want to)\n" + "5(I cannot do my usual work)\n " + "10(I can’t do any work at all)");
-        question8.setAnswer("");
-        question8.setType("scale1-10");
-        questions.save(question8);
-
-        question9.setTitle("Concentration");
-        question9.setText("0(I can concentrate fully when I wast to with no difficulty)\n" + "5(I have a fair degree of difficulty in concentrating when I want to)\n" + "10(I cannot concentrate at all)\n");
-        question9.setAnswer("");
-        question9.setType("scale1-10");
-        questions.save(question9);
-
-        question10.setTitle("Driving");
-        question10.setText("0(I can drive my car without any neck pain)\n" + "5(I can’t drive my car as long as I want because of slight pain in my neck)\n" + "10(I can’t drive my car at all because of the pain)\n");
-        question10.setAnswer("");
-        question10.setType("scale1-10");
-        questions.save(question10);
+            question19.setTitle("Urinary Distress Inventory 6 (UDI-6)");
+            question19.setText("On a scale of 1-10, do you usually experience difficulty emptying your bladder?");
+            question19.setType("scale1-10");
+            questions.save(question19);
 
 
-
-
-
-
-        question11.setTitle("Initial Assessment");
-        question11.setText("Today, are there any activities that you are unable to do\n" +
-                "or having difficulty with because of your _________________ problem?\n");
-        question11.setAnswer("");
-        question11.setType("fillIn");
-        questions.save(question11);
-
-        question12.setTitle("Activities");
-        question12.setText("Please name a specific activity that causes you pain. _______________");
-        question12.setAnswer("");
-        question12.setType("fillIn");
-        questions.save(question12);
-
-        question13.setTitle("Activities");
-        question13.setText("Please rate your pain during this activity on the scale below.");
-        question13.setAnswer("");
-        question13.setType("scale1-10");
-        questions.save(question13);
-
-        question14.setTitle("Activities");
-        question14.setText("Please name a specific activity that causes you pain. _______________");
-        question14.setAnswer("");
-        question14.setType("fillIn");
-        questions.save(question14);
-
-        question15.setTitle("Activities");
-        question15.setText("Please rate your pain during this activity on the scale below.");
-        question15.setAnswer("");
-        question15.setType("scale1-10");
-        questions.save(question15);
-
-
-
-
-
-        question16.setTitle("Pelvic Organ Prolapse Distress Inventory 6 (POPDI-6)");
-        question16.setText("On a scale of 1-10, do you usually experience pressure in the lower abdomen?");
-        question16.setAnswer("");
-        question16.setType("scale1-10");
-        questions.save(question16);
-
-        question17.setTitle("Colorectal-Anal Distress Inventory 9 (CRAD-8)");
-        question17.setText("On a scale of 1-10, do you feel you need to strain too hard to have a bowel movement?");
-        question17.setAnswer("");
-        question17.setType("scale1-10");
-        questions.save(question17);
-
-        question18.setTitle("Urinary Distress Inventory 6 (UDI-6)");
-        question18.setText("On a scale of 1-10, do you experience frequent urination?");
-        question18.setAnswer("");
-        question18.setType("scale1-10");
-        questions.save(question18);
-
-        question19.setTitle("Urinary Distress Inventory 6 (UDI-6)");
-        question19.setText("On a scale of 1-10, do you usually experience difficulty emptying your bladder?");
-        question19.setAnswer("");
-        question19.setType("scale1-10");
-        questions.save(question19);
-
-
-
-        ArrayList<Question> questionGroup1 = new ArrayList<Question>();
+            ArrayList<Question> questionGroup1 = new ArrayList<Question>();
             questionGroup1.add(question);
             questionGroup1.add(question1);
             questionGroup1.add(question2);
@@ -407,32 +347,32 @@ public class FinalProjectController {
             questionGroup1.add(question4);
 
 
-        ArrayList<Question> questionGroup2 = new ArrayList<Question>();
-        questionGroup2.add(question5);
-        questionGroup2.add(question6);
-        questionGroup2.add(question7);
-        questionGroup2.add(question8);
-        questionGroup2.add(question9);
-        questionGroup2.add(question10);
+            ArrayList<Question> questionGroup2 = new ArrayList<Question>();
+            questionGroup2.add(question5);
+            questionGroup2.add(question6);
+            questionGroup2.add(question7);
+            questionGroup2.add(question8);
+            questionGroup2.add(question9);
+            questionGroup2.add(question10);
 
-        ArrayList<Question> questionGroup3 = new ArrayList<Question>();
-        questionGroup3.add(question11);
-        questionGroup3.add(question12);
-        questionGroup3.add(question13);
-        questionGroup3.add(question14);
-        questionGroup3.add(question15);
+            ArrayList<Question> questionGroup3 = new ArrayList<Question>();
+            questionGroup3.add(question11);
+            questionGroup3.add(question12);
+            questionGroup3.add(question13);
+            questionGroup3.add(question14);
+            questionGroup3.add(question15);
 
-        ArrayList<Question> questionGroup4 = new ArrayList<Question>();
-        questionGroup4.add(question16);
-        questionGroup4.add(question17);
-        questionGroup4.add(question18);
-        questionGroup4.add(question19);
+            ArrayList<Question> questionGroup4 = new ArrayList<Question>();
+            questionGroup4.add(question16);
+            questionGroup4.add(question17);
+            questionGroup4.add(question18);
+            questionGroup4.add(question19);
 
 
-        form1.setQuestions(questionGroup1);
-        form2.setQuestions(questionGroup2);
-        form3.setQuestions(questionGroup3);
-        form4.setQuestions(questionGroup4);
+            form1.setQuestions(questionGroup1);
+            form2.setQuestions(questionGroup2);
+            form3.setQuestions(questionGroup3);
+            form4.setQuestions(questionGroup4);
 
             forms.save(form1);
             forms.save(form2);
@@ -440,8 +380,7 @@ public class FinalProjectController {
             forms.save(form4);
 
 
-
-          //  user.getPatients().add(patient);
+            //  user.getPatients().add(patient);
 
         }
     }
@@ -462,11 +401,6 @@ public class FinalProjectController {
         response.sendRedirect("/");
         return user;
     }
-
-
-
-
-
 
 
     //return all users
@@ -493,10 +427,6 @@ public class FinalProjectController {
     }
 
 
-
-
-
-
     //return all patients
     @RequestMapping(path = "/patients", method = RequestMethod.GET)
     public List<Patient> patients() {
@@ -510,10 +440,6 @@ public class FinalProjectController {
 
         return patients.findById(patientId);
     }
-
-
-
-
 
 
     //return all forms
@@ -531,11 +457,6 @@ public class FinalProjectController {
     }
 
 
-
-
-
-
-
     //Returns a specific form and associates it with a patient
     @RequestMapping(path = "/forms/{formId}/{patientId}", method = RequestMethod.GET)
     public FormPatientViewModel form(@PathVariable Integer formId, @PathVariable Integer patientId) {
@@ -546,11 +467,6 @@ public class FinalProjectController {
         //return formPatientView class
         return fPVM;
     }
-
-
-
-
-
 
 
     //return all questions
@@ -567,13 +483,6 @@ public class FinalProjectController {
         return questions.findById(questionId);
     }
 
-
-
-
-
-
-    //post /addResponses
-    //POST    /records/{formId}/{patientId}
     // Submit answers for {formId} filled in by {patientId}.
     @RequestMapping(path = "/records/{formId}/{patientId}", method = RequestMethod.POST)
     public void records(@PathVariable Integer formId, @PathVariable Integer patientId, @RequestBody List<String> answers) {
@@ -583,7 +492,7 @@ public class FinalProjectController {
         List<Question> questions = f.getQuestions();
         List<Answer> answersList = new ArrayList<>();
 
-        for(int i = 0;i < answers.size();i++) {
+        for (int i = 0; i < answers.size(); i++) {
             answersList.add(new Answer(questions.get(i), answers.get(i)));
         }
 
@@ -601,19 +510,6 @@ public class FinalProjectController {
         return "";
     }
 
-//         Format:
-//
-//                                          [{
-//        id: number,
-//                name: string,
-//                date: "number",
-//                patient: {
-//            firstName: "string",
-//                    lastName: "string",
-//        }
-//    }]
-
-
     //return all records
     @RequestMapping(path = "/records", method = RequestMethod.GET)
     public List<Record> getRecords() {
@@ -623,7 +519,7 @@ public class FinalProjectController {
 
     //Returns a specific record (form with answers).
     @RequestMapping(path = "/records/{recordId}", method = RequestMethod.GET)
-    public Record recordAnswers(Integer id){
+    public Record recordAnswers(Integer id) {
         Record record = records.findById(id);
 
         return record;
