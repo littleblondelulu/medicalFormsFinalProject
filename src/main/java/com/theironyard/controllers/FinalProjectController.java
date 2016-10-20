@@ -39,11 +39,6 @@ public class FinalProjectController {
     @PostConstruct
     public void init() {
 
-        forms.deleteAll();
-        users.deleteAll();
-        questions.deleteAll();
-        patients.deleteAll();
-
 
         if (users.count() == 0) {
             User user = new User();
