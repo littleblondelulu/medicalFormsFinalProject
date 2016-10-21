@@ -42,7 +42,7 @@ public class FinalProjectController {
 
         if (users.count() == 0) {
             User user = new User();
-            user.setName("Dr. Baringer");
+            user.setName("Dr. Barringer");
 
             User user1 = new User();
             user1.setName("Dr. Tobaggon");
