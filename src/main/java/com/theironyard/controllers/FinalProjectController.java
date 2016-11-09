@@ -216,7 +216,7 @@ public class FinalProjectController {
 
 
             question.setTitle("Pain intensity\n");
-            question.setText("0(I have no pain at the moment) | " +
+            question.setText("1(I have no pain at the moment) | " +
                     "5(The pain is fairly severe at the moment) |" +
                     "10(The pain is the worst imaginable at the moment)");
             question.setType("scale1-10");
@@ -224,7 +224,7 @@ public class FinalProjectController {
 
 
             question1.setTitle("Lifting\n");
-            question1.setText("0(I can lift heavy weights without extra pain) | " +
+            question1.setText("1(I can lift heavy weights without extra pain) | " +
                     "5(Pain prevents me lifting heavy weights but I can manage light to medium weights if they are conveniently positioned) | " +
                     "10(I cannot lift or carry anything)");
             question1.setType("scale1-10");
@@ -232,7 +232,7 @@ public class FinalProjectController {
 
 
             question2.setTitle("Walking\n");
-            question2.setText("0(Pain does not prevent me walking any distance) | " +
+            question2.setText("1(Pain does not prevent me walking any distance) | " +
                     "5(Pain prevents me from walking more than 500 metres) | " +
                     "10(I am in bed most of the time)");
             question2.setType("scale1-10");
@@ -240,7 +240,7 @@ public class FinalProjectController {
 
 
             question3.setTitle("Sitting\n");
-            question3.setText("0(I can sit in any chair as long as I like) | " +
+            question3.setText("1(I can sit in any chair as long as I like) | " +
                     "5(Pain prevents me from sitting more than 30 mintutes) | " +
                     "10(Pain prevents me from sitting at all)");
             question3.setType("scale1-10");
@@ -248,46 +248,46 @@ public class FinalProjectController {
 
 
             question4.setTitle("Sleeping\n");
-            question4.setText("0(My sleep is never disturbed by pain) | " +
+            question4.setText("1(My sleep is never disturbed by pain) | " +
                     "5(Pain prevents me from standing for more than 30 minutes) | " +
                     "10(Pain prevents me from standing at all)");
             question4.setType("scale1-10");
             questions.save(question4);
 
 
-            question5.setTitle("Personal Care (Washing, Dressing, etc");
-            question5.setText("0(I can look after myself normally without causing extra pain) | " +
+            question5.setTitle("Personal Care (Washing, Dressing, etc)");
+            question5.setText("1(I can look after myself normally without causing extra pain) | " +
                     "5(I need some help but manage most of my personal care) | " +
                     "10(i do not get dressed, I wash with difficulty and stay in bed)");
             question5.setType("scale1-10");
             questions.save(question5);
 
             question6.setTitle("Reading");
-            question6.setText("0(I can read as much as I want to with no pain in my neck) | " +
+            question6.setText("1(I can read as much as I want to with no pain in my neck) | " +
                     "5(I can’t read as much as I want because of moderate pain in my neck) | " +
                     "10(I cannot read at all)");
             question6.setType("scale1-10");
             questions.save(question6);
 
             question7.setTitle("Headaches");
-            question7.setText("0(I have no headaches at all) | " +
+            question7.setText("1(I have no headaches at all) | " +
                     "5(I have moderate headaches, which come frequently) | " +
                     "10(I have headaches almost all of the time)");
             question7.setType("scale1-10");
             questions.save(question7);
 
             question8.setTitle("Work");
-            question8.setText("0(I can do as much work as I want to) | " + "5(I cannot do my usual work) | " + "10(I can’t do any work at all)");
+            question8.setText("1(I can do as much work as I want to) | " + "5(I cannot do my usual work) | " + "10(I can’t do any work at all)");
             question8.setType("scale1-10");
             questions.save(question8);
 
             question9.setTitle("Concentration");
-            question9.setText("0(I can concentrate fully when I wast to with no difficulty) | " + "5(I have a fair degree of difficulty in concentrating when I want to) | " + "10(I cannot concentrate at all)");
+            question9.setText("1(I can concentrate fully when I wast to with no difficulty) | " + "5(I have a fair degree of difficulty in concentrating when I want to) | " + "10(I cannot concentrate at all)");
             question9.setType("scale1-10");
             questions.save(question9);
 
             question10.setTitle("Driving");
-            question10.setText("0(I can drive my car without any neck pain) | " + "5(I can’t drive my car as long as I want because of slight pain in my neck) | " + "10(I can’t drive my car at all because of the pain)");
+            question10.setText("1(I can drive my car without any neck pain) | " + "5(I can’t drive my car as long as I want because of slight pain in my neck) | " + "10(I can’t drive my car at all because of the pain)");
             question10.setType("scale1-10");
             questions.save(question10);
 
