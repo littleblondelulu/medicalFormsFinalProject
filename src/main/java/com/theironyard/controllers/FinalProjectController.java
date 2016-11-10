@@ -12,7 +12,6 @@ import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.List;
 
-//need to change all -- return "/"
 
 @RestController
 public class FinalProjectController {
